@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Test1"
+subtitle: "(o.O)"
+date:   2019-10-25 23:34:01
+categories: [design, test]
+---
+t1
+
+t2
+
+t3
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+
+[Gökmen]:      https://johngkmn.github.io/
+[Gökmen-gh]:   https://github.com/JohnGkmn
