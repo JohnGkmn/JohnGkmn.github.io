@@ -5,11 +5,16 @@ subtitle: "(o.O)"
 date:   2019-10-25 23:34:01
 categories: [design, test]
 ---
+
 t1
+======
 
-t2
+**t2**
 
-t3
+# t3
+
+Alt-H2
+------
 
 {% highlight ruby %}
 def print_hi(name)
