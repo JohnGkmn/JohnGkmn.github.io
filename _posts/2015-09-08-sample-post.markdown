@@ -3,7 +3,7 @@ layout: post
 title:  "Sample post from Daktilo"
 subtitle: "What you can do with it!"
 date:   2014-08-19 23:56:45
-categories: [tool]
+categories: [test]
 ---
 
 Just a sample post to show some of the *typography* elements supported from
@@ -59,4 +59,4 @@ Pellentesque habitant morbi tristique senectus
 : Curabitur malesuada lacus ac gravida porttitor
 : Duis sodales feugiat lorem et mollis.
 
-Want to suggest something? Please [Send me a request](https://github.com/kronik3r/daktilo/issues/new).
+Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
