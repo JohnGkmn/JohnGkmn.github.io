@@ -2,7 +2,7 @@
 layout: post
 title:  "Bandit 1-15"
 subtitle: "Bandit 1-15 Çözümleri"
-date:   2019-10-29 01:34:01
+date: 2019-10-29 01:34:01 +0200
 categories: [writeup]
 ---
 
