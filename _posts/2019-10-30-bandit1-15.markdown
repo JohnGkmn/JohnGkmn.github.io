@@ -8,7 +8,7 @@ categories: [writeup]
 
 <ul class="list-posts">
     {% for post in site.posts %}
-     {{post}} 
+     {{post.categories}} 
         <li class="post-teaser">
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title">{{ post.title }}</span>
