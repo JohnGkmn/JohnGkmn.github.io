@@ -3,7 +3,7 @@ layout: post
 title:  "Bandit 1-15"
 subtitle: "Bandit 1-15 Çözümleri"
 date:   2019-10-30 13:34:01
-categories: [writeup]
+categories: [writeup, tools]
 ---
 
 <ul class="list-posts">
