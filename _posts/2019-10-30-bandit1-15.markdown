@@ -7,6 +7,7 @@ categories: [writeup]
 ---
 diğer writeuplar_____
 <ul class="list-posts">
+    {{post.category}}
     {% for post in site.posts %}
         {% if "writeup" in post.categories %}
             <li class="post-teaser">
