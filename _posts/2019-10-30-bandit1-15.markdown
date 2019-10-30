@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bandit 1-15"
-subtitle: "Bandit 1-5 Çözümleri"
+subtitle: "Bandit 1-15 Çözümleri"
 date:   2019-10-30 13:34:01
 categories: [writeup]
 ---
@@ -14,16 +14,19 @@ ilk not denemesi
 Devamı gelecek...
 
 Diğer writeuplar 
-<ul class="list-posts">
-    {% for post in categories/writeup/ %}
-        <li class="post-teaser">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-                <span class="post-teaser__title">{{ post.title }}</span>
-                <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
-            </a>
-        </li>
+
+
+    {% for post in site.posts %}
+        {% if post.categories contains page.category %}
+            <li class="post-teaser">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <span class="post-teaser__title">{{ post.title }}</span>
+                    <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
+                </a>
+            </li>
+            {% assign empty_category = false %}
+        {% endif %}
     {% endfor %}
-</ul>
 
 
 
