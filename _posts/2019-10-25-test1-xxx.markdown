@@ -24,12 +24,10 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
+ aaa [Değişken link test][Gokmen-gh] aaa
+
 [Gökmen](https://johngkmn.github.io/)
 [Gokmen-gh]: https://github.com/JohnGkmn
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
 
 ---
 <ul class="list-posts">
