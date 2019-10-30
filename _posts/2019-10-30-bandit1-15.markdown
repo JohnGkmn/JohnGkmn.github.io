@@ -15,7 +15,6 @@ Devamı gelecek...
 
 Diğer writeuplar 
 
----
 {% for category in site.data.categories %}
   {% if category.slug == page.category %}
     {% assign category_name =  category.name %}
@@ -27,7 +26,7 @@ Diğer writeuplar
     <div class="page-title__subtitle">Articles on the category <strong>‘{{ category_name }}’</strong></div>
 </h1>
 layout: default
----
+
 {% include category/title.html %}
 
 <ul class="list-posts">
