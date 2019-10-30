@@ -9,7 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://hitchhiker.ma" # the base hostname & protocol for your site
 
 author:
-  fullname: Gökmen DEMİR
+  fullname: Gokmen DEMİR
   github: JohnGkmn
   twitter: standartyerli
   # disqus: your_disqus_forum_shortname
