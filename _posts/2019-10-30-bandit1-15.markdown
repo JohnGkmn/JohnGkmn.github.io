@@ -5,6 +5,25 @@ subtitle: "Bandit 1-15 Çözümleri"
 date:   2019-10-30 13:34:01
 categories: [writeup]
 ---
+
+
+Bandit 0
+=====
+SSH bağlantısı yapılması istenmekte ve bunun için gerekli bilgiler verilmektedir.
+```terminal
+ssh bandit0@bandit.labs.overthewire.org -p 2220 
+```
+komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Buraya göz gezdirmeyi unutmayınız.**
+````
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+bandit0@bandit:~$
+````
+
+
+
 diğer writeuplar
 _____
 <ul class="list-posts">
