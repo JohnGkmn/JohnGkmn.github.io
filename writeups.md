@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Writeups
-subtitle: Just who the hell you think I am?
+subtitle: Çözüme giden yollar
 permalink: /writeups/
 ---
 
@@ -10,7 +10,7 @@ ilk page denemesi..
 
 Devamı gelecek...
 
---*-*-*-**-*-*-*
+_____
 
 <ul class="list-posts">
     {% for post in site.posts %}
