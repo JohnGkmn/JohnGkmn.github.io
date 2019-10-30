@@ -6,3 +6,9 @@
 
 - slug: productivity
   name: Productivity
+  
+- slug: test
+  name: Test
+ 
+- slug: writeup
+  name: Writeup
