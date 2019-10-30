@@ -4,17 +4,6 @@ title:  "Bandit 1-15"
 subtitle: "Bandit 1-15 Çözümleri"
 date:   2019-10-30 13:34:01
 categories: [test]
----
-
-
-_____
-ilk not denemesi
-[Gökmen DEMİR](JohnGkmn.github.io)
-
-Devamı gelecek...
-
-Diğer writeuplar 
-
 {% for category in site.data.categories %}
   {% if category.slug == page.category %}
     {% assign category_name =  category.name %}
@@ -52,6 +41,18 @@ layout: default
 </ul>
 
 {% include page/explore.html %}
+---
+
+
+_____
+ilk not denemesi
+[Gökmen DEMİR](JohnGkmn.github.io)
+
+Devamı gelecek...
+
+Diğer writeuplar 
+
+
 
 
 
