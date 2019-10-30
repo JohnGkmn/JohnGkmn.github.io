@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "Test1 - For MD"
+subtitle: "(o.O)"
+date:   2019-10-25 23:34:01
+categories: [design, test]
+---
+
+t1
+======
+
+**t2**
+
+# t3
+
+Alt-H2
+------
+
+line
+___
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+[Gökmen](https://johngkmn.github.io/)
+[Gokmen-gh](https://github.com/JohnGkmn)
+
+
+
+ *asterisks* or _underscores_.
+ 
+  **asterisks** or __underscores__.
+  
+  **asterisks and _underscores_**.
+  
+   ~~Scratch this.~~
+   
+   [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+   
+    
+```python
+s = "Python syntax highlighting"
+print s
+```
+
+
+# Blockquotes
+
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+
+
+
+Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
