@@ -6,7 +6,18 @@ date:   2019-10-30 13:34:01
 categories: [writeup]
 ---
 
-
+<ul class="list-posts">
+    {% for post in site.posts %}
+      {% if post.category=="writeup" %}
+        <li class="post-teaser">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <span class="post-teaser__title">{{ post.title }}</span>
+                <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
+            </a>
+        </li>
+  {% endif %}
+    {% endfor %}
+</ul> 
 _____
 
 
