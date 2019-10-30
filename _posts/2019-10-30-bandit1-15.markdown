@@ -5,7 +5,8 @@ subtitle: "Bandit 1-15 Çözümleri"
 date:   2019-10-30 13:34:01
 categories: [writeup]
 ---
-diğer writeuplar_____
+diğer writeuplar
+_____
 <ul class="list-posts">
     {{post.category}}
     {% for post in site.posts %}
