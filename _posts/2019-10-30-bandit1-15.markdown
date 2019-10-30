@@ -3,12 +3,12 @@ layout: post
 title:  "Bandit 1-15"
 subtitle: "Bandit 1-15 Çözümleri"
 date:   2019-10-30 13:34:01
-categories: [writeup, tools]
+categories: [writeup]
 ---
 
 <ul class="list-posts">
     {% for post in site.posts %}
-     {{post.categories}} 
+     {{post.category}} 
         <li class="post-teaser">
             <a href="{{ post.url | prepend: site.baseurl }}">
                 <span class="post-teaser__title">{{ post.title }}</span>
