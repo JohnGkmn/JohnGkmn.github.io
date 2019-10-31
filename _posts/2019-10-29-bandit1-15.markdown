@@ -17,12 +17,25 @@ komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğ
 
 Bandit Level 0 → Level 1
 ======
+
+Code | Explanation
+--- | ---
 ls | List  information  about the FILEs
 cd |  Change the shell working directory
 cat |  Concatenate FILE(s) to standard output
 file | Tests each argument in an attempt to classify it.
 du | Summarize disk usage of the set of FILEs, recursively for directories
 find | Searches the directory tree rooted
+
+---
+ls: List  information  about the FILEs
+cd:  Change the shell working directory
+cat:  Concatenate FILE(s) to standard output
+file: Tests each argument in an attempt to classify it.
+du: Summarize disk usage of the set of FILEs, recursively for directories
+find: Searches the directory tree rooted
+---
+
 ````terminal
 bandit0@bandit:~$ ls
 readme
