@@ -10,10 +10,12 @@ categories: [writeup]
 Bandit 0
 ======
 SSH bağlantısı yapılması istenmekte ve bunun için gerekli bilgiler verilmektedir.
-```terminal
+
+````terminal
 ssh bandit0@bandit.labs.overthewire.org -p 2220 
-```
-komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Buraya göz gezdirmeyi unutmayınız.**
+````
+
+komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Burayı göz gezdiriniz.**
 
 Bandit Level 0 → Level 1
 ======
@@ -41,18 +43,20 @@ bandit0@bandit:~$
 Bandit Level 1 → Level 2
 ======
 ``ssh bandit1@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-```terminal
+
+````terminal
 bandit1@bandit:~$ ls -lah
 total 24K
 -rw-r-----  1 bandit2 bandit1   33 Oct 16  2018 -
 bandit1@bandit:~$ cat ./-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
-```
+````
 
 Bandit Level 2 → Level 3
 ======
 ``ssh bandit2@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-```terminal
+
+````terminal
 bandit2@bandit:~$ ls -lah
 total 24K
 drwxr-xr-x  2 root    root    4.0K Oct 16  2018 .
@@ -68,13 +72,14 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$
-```
+````
 
 Bandit Level 3 → Level 4
 ======
 ``ssh bandit3@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-```terminal
-```
+
+````terminal
+````
 
 
 
