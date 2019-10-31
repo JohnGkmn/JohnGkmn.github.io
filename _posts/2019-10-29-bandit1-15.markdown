@@ -24,23 +24,6 @@ bandit0@bandit:~$
 
 
 
-diğer writeuplar
+
 _____
-
-<ul class="list-posts">
-    {{post.category}}
-    {% for post in site.posts %}
-        {% if "writeup" in post.categories %}
-            <li class="post-teaser">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                    <span class="post-teaser__title">{{ post.title }}</span>
-                    <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
-                </a>
-            </li>
-        {% endif %}      
-    {% endfor %}
-</ul> 
-_____
-
-
 Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
