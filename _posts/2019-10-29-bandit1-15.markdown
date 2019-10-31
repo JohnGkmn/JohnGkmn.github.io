@@ -27,6 +27,12 @@ file | Tests each argument in an attempt to classify it.
 du | Summarize disk usage of the set of FILEs, recursively for directories
 find | Searches the directory tree rooted
 
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+
 ---
 ls: List  information  about the FILEs
 cd:  Change the shell working directory
