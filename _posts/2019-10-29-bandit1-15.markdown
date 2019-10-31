@@ -8,7 +8,7 @@ categories: [writeup]
 
 
 Bandit 0
-=====
+======
 SSH bağlantısı yapılması istenmekte ve bunun için gerekli bilgiler verilmektedir.
 ```terminal
 ssh bandit0@bandit.labs.overthewire.org -p 2220 
@@ -17,6 +17,12 @@ komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğ
 
 Bandit Level 0 → Level 1
 ======
+ls | List  information  about the FILEs
+cd |  Change the shell working directory
+cat |  Concatenate FILE(s) to standard output
+file | Tests each argument in an attempt to classify it.
+du | Summarize disk usage of the set of FILEs, recursively for directories
+find | Searches the directory tree rooted
 ````terminal
 bandit0@bandit:~$ ls
 readme
@@ -24,6 +30,7 @@ bandit0@bandit:~$ cat readme
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 bandit0@bandit:~$
 ````
+
 
 
 
