@@ -17,37 +17,31 @@ komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğ
 
 Bandit Level 0 → Level 1
 ======
-
-Code | Explanation
---- | ---
-ls | List  information  about the FILEs
-cd |  Change the shell working directory
-cat |  Concatenate FILE(s) to standard output
-file | Tests each argument in an attempt to classify it.
-du | Summarize disk usage of the set of FILEs, recursively for directories
-find | Searches the directory tree rooted
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-
----
+`
 ls: List  information  about the FILEs
-cd:  Change the shell working directory
-cat:  Concatenate FILE(s) to standard output
+cd: Change the shell working directory
+cat: Concatenate FILE(s) to standard output
 file: Tests each argument in an attempt to classify it.
 du: Summarize disk usage of the set of FILEs, recursively for directories
 find: Searches the directory tree rooted
----
-
+`
 ````terminal
 bandit0@bandit:~$ ls
 readme
 bandit0@bandit:~$ cat readme
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 bandit0@bandit:~$
+````
+
+Bandit Level 1 → Level 2
+======
+`ssh bandit1@bandit.labs.overthewire.org -p 2220` password bir önceki seviyede bulunmuştu.
+````
+bandit1@bandit:~$ \ls -lah
+total 24K
+-rw-r-----  1 bandit2 bandit1   33 Oct 16  2018 -
+bandit1@bandit:~$ cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ````
 
 
