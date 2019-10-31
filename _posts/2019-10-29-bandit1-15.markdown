@@ -18,17 +18,17 @@ komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğ
 Bandit Level 0 → Level 1
 ======
 
-``**ls:** List  information  about the FILEs``
+**ls:** List  information  about the FILEs
 
-``**cd:** Change the shell working directory``
+**cd:** Change the shell working directory
 
-``**cat:** Concatenate FILE(s) to standard output``
+**cat:** Concatenate FILE(s) to standard output
 
-``**file:** Tests each argument in an attempt to classify it.``
+**file:** Tests each argument in an attempt to classify it.
 
-``**du:** Summarize disk usage of the set of FILEs, recursively for directories``
+**du:** Summarize disk usage of the set of FILEs, recursively for directories
 
-``**find:** Searches the directory tree rooted``
+**find:** Searches the directory tree rooted
 
 ````terminal
 bandit0@bandit:~$ ls
@@ -41,18 +41,18 @@ bandit0@bandit:~$
 Bandit Level 1 → Level 2
 ======
 ``ssh bandit1@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-````terminal
+```terminal
 bandit1@bandit:~$ ls -lah
 total 24K
 -rw-r-----  1 bandit2 bandit1   33 Oct 16  2018 -
 bandit1@bandit:~$ cat ./-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
-````
+```
 
 Bandit Level 2 → Level 3
 ======
 ``ssh bandit2@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-````terminal
+```terminal
 bandit2@bandit:~$ ls -lah
 total 24K
 drwxr-xr-x  2 root    root    4.0K Oct 16  2018 .
@@ -68,13 +68,13 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$
-````
+```
 
 Bandit Level 3 → Level 4
 ======
 ``ssh bandit3@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-````terminal
-````
+```terminal
+```
 
 
 
