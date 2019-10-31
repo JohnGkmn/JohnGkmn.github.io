@@ -14,7 +14,7 @@ SSH bağlantısı yapılması istenmekte ve bunun için gerekli bilgiler verilme
 ssh bandit0@bandit.labs.overthewire.org -p 2220 
 ```
 komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Buraya göz gezdirmeyi unutmayınız.**
-````
+````python3
 bandit0@bandit:~$ ls
 readme
 bandit0@bandit:~$ cat readme
