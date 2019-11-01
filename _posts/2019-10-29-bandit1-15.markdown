@@ -151,5 +151,8 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 
 ![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
+
 _____
+
 Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
+![](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/map-location.png "")
