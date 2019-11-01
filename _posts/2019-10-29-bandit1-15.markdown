@@ -306,6 +306,23 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR")
 
+Bandit Level 11 → Level 12
+======
+**_ssh bandit10@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+**A-Za-z N-ZA-Mn-za-m:** ifadesiyle A yerine N gelecek şekilde alfabe ötelenmiştir.
+
+Hint;
+- ROT13 encode
+![ROT13](https://www.wikizeroo.org/index.php?q=aHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8zLzMzL1JPVDEzX3RhYmxlX3dpdGhfZXhhbXBsZS5zdmc)
+```terminal
+bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+bandit11@bandit:~$ cat data.txt | tr A-Za-z N-ZA-Mn-za-m
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu")
+
 
 
 ![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
