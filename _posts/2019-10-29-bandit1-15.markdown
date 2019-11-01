@@ -72,6 +72,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ````
+![alt text](https://github.com/JohnGkmn/JohnGkmn.github.io/blob/master/css/smashicons.png "Sol Tik")
 
 Bandit Level 3 → Level 4
 ======
@@ -103,8 +104,42 @@ bandit3@bandit:~/inhere$
 
 Bandit Level 4 → Level 5
 ======
-``ssh bandit4@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
-
-
+*ssh bandit4@bandit.labs.overthewire.org -p 2220* password bir önceki seviyede bulunmuştu.
+````terminal
+bandit4@bandit:~$ ls -lah
+total 24K
+drwxr-xr-x  3 root root 4.0K Oct 16  2018 .
+drwxr-xr-x 41 root root 4.0K Oct 16  2018 ..
+-rw-r--r--  1 root root  220 May 15  2017 .bash_logout
+-rw-r--r--  1 root root 3.5K May 15  2017 .bashrc
+drwxr-xr-x  2 root root 4.0K Oct 16  2018 inhere
+-rw-r--r--  1 root root  675 May 15  2017 .profile
+bandit4@bandit:~$ du -ha inhere/
+4.0K    inhere/-file09
+4.0K    inhere/-file06
+4.0K    inhere/-file01
+4.0K    inhere/-file02
+4.0K    inhere/-file05
+4.0K    inhere/-file03
+4.0K    inhere/-file08
+4.0K    inhere/-file07
+4.0K    inhere/-file04
+4.0K    inhere/-file00
+44K     inhere/
+bandit4@bandit:~$ file inhere/-file0*
+inhere/-file00: data
+inhere/-file01: data
+inhere/-file02: data
+inhere/-file03: data
+inhere/-file04: data
+inhere/-file05: data
+inhere/-file06: data
+inhere/-file07: ASCII text
+inhere/-file08: data
+inhere/-file09: data
+bandit4@bandit:~$ cat inhere/-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+````
+![alt text](https://github.com/JohnGkmn/JohnGkmn.github.io/blob/master/css/smashicons.png "Sol Tik") **koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
 _____
 Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
