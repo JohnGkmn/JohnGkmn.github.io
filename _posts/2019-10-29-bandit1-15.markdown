@@ -16,7 +16,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 ````
 
 komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Burayı göz gezdiriniz.**
-![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png " ")
 
 Bandit Level 0 → Level 1
 ======
@@ -109,7 +109,7 @@ bandit3@bandit:~/inhere$
 Bandit Level 4 → Level 5
 ======
 **_ssh bandit4@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
-````
+```
 bandit4@bandit:~$ ls -lah
 total 24K
 drwxr-xr-x  3 root root 4.0K Oct 16  2018 .
@@ -143,7 +143,7 @@ inhere/-file08: data
 inhere/-file09: data
 bandit4@bandit:~$ cat inhere/-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
-````
+```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
 
 
