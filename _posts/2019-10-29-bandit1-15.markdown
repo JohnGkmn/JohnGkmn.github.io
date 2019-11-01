@@ -290,8 +290,21 @@ J;m=
 ========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 iv8!=
 ```
-![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk")
 
+Bandit Level 10 → Level 11
+======
+**_ssh bandit10@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+Hint;
+- base64 encode
+```terminal
+bandit10@bandit:~$ cat data.txt
+VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
+bandit10@bandit:~$ cat data.txt | base64 -d
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR")
 
 
 
