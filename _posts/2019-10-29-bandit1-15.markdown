@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bandit 1-15"
-subtitle: "Bandit 1-15 Çözümleri"
+subtitle: "Bandit 1-15 Çözümleri"![](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/map-location.png "")
 date: 2019-10-29 01:34:01 +0200
 categories: [writeup]
 ---
@@ -16,7 +16,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 ````
 
 komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Burayı göz gezdiriniz.**
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "")
 
 Bandit Level 0 → Level 1
 ======
@@ -40,11 +40,11 @@ bandit0@bandit:~$ cat readme
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 bandit0@bandit:~$
 ````
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "boJ9jbbUNNfktd78OOpsqOltutMc3MY1")
 
 Bandit Level 1 → Level 2
 ======
-``ssh bandit1@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
+**_ssh bandit1@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
 ````terminal
 bandit1@bandit:~$ ls -lah
@@ -53,11 +53,11 @@ total 24K
 bandit1@bandit:~$ cat ./-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ````
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9")
 
 Bandit Level 2 → Level 3
 ======
-``ssh bandit2@bandit.labs.overthewire.org -p 2220`` password bir önceki seviyede bulunmuştu.
+**_ssh bandit2@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
 ````terminal
 bandit2@bandit:~$ ls -lah
@@ -75,7 +75,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ````
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh") 
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK") 
 
 Bandit Level 3 → Level 4
 ======
@@ -104,11 +104,11 @@ bandit3@bandit:~/inhere$ cat .hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 bandit3@bandit:~/inhere$
 ````
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "pIwrPrtPN36QITSp3EQaw936yaFoFgAB")
 
 Bandit Level 4 → Level 5
 ======
-*ssh bandit4@bandit.labs.overthewire.org -p 2220* password bir önceki seviyede bulunmuştu.
+**_ssh bandit4@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 ````
 bandit4@bandit:~$ ls -lah
 total 24K
@@ -144,15 +144,12 @@ inhere/-file09: data
 bandit4@bandit:~$ cat inhere/-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ````
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
-
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/business-and-finance.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
-
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/microscope.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/map-location.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
 
 
-![alt text](https://image.flaticon.com/icons/svg/2246/2246610.svg "Sol Tik")
 
+
+
+![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
 _____
 Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
