@@ -6,9 +6,11 @@ date: 2019-10-29 01:34:01 +0200
 categories: [writeup]
 ---
 
-**_Her bir komut için açıklamalar MAN ve HELP bölümlerinden alınmıştır._**
-**_Ayrıca yazılan parametreler olabildiğince açıklanmaya çalışılmıştır._**
-**_Bazı bölümler ise writeuplara bakılarak çözülmüştür._**
+###### Her bir komut için açıklamalar MAN ve HELP bölümlerinden alınmıştır.
+
+###### Ayrıca yazılan parametreler olabildiğince açıklanmaya çalışılmıştır.
+
+###### Bazı bölümler ise writeuplara bakılarak çözülmüştür.
 
 
 Bandit 0
@@ -153,6 +155,7 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 Bandit Level 5 → Level 6
 ======
 **_ssh bandit5@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
 Hint;
 - human-readable
 - 1033 bytes in size
@@ -190,6 +193,7 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 Bandit Level 6 → Level 7
 ======
 **_ssh bandit6@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
 Hint;
 - owned by user bandit7
 - owned by group bandit6
@@ -211,7 +215,9 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 Bandit Level 7 → Level 8
 ======
 **_ssh bandit7@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
-##### You should know
+
+###### You should know
+
 **grep:** Search for PATTERN in each FILE or standard input.
 
 **sort:** Write sorted concatenation of all FILE(s) to standard output.
@@ -253,13 +259,40 @@ millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 Bandit Level 8 → Level 9
 ======
 **_ssh bandit8@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
 **u** parametresi ile sadece eşsiz olan linelar
+
 **|** ifadesi ile ilk komutun çıktısı sonraki komutun girdisi olarak verilmiştir.
 ```terminal
 bandit8@bandit:~$ sort data.txt | uniq -u
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR")
+
+Bandit Level 9 → Level 10
+======
+**_ssh bandit9@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+Hint;
+- = karakteri
+```terminal
+bandit9@bandit:~$ strings data.txt | grep =
+2========== the
+========== password
+>t=     yP
+rV~dHm=
+========== isa
+=FQ?P\U
+=       F[
+pb=x
+J;m=
+=)$=
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+iv8!=
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR")
+
+
 
 
 ![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
