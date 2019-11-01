@@ -163,6 +163,7 @@ f     regular file
 l     symbolic link
 s    socket
 D   door (Solaris)
+
 **size:** parametdesi ile dosya boyutu;
     b  for 512-byte blocks (this is the default if no suffix is used)
     c  for bytes
@@ -170,6 +171,7 @@ D   door (Solaris)
     k  for Kilobytes (units of 1024 bytes)
     M  for Megabytes (units of 1048576 bytes)
     G  for Gigabytes (units of 1073741824 bytes)
+
 **!:** ifadesi ile sonrasında gelen parametrenin "değili-olmayanı" ifade edilmiştir.
 ```terminal
 bandit5@bandit:~$ find -type f -size 1033c ! -executable
@@ -188,8 +190,11 @@ istenilenler;
 - owned by user bandit7
 - owned by group bandit6
 - 33 bytes in size
+
 **user:** parametresi ile user
+
 **group:** parametresi ile group
+
 **2>/dev/null:** istenmeyen sonuçların gözükmemesi durumları ifade edilmiştir.
 ```terminal
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
