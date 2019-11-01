@@ -273,8 +273,11 @@ Bandit Level 9 → Level 10
 ======
 **_ssh bandit9@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
+
 Hint;
 - = karakteri
+
+
 ```terminal
 bandit9@bandit:~$ strings data.txt | grep =
 2========== the
@@ -290,7 +293,9 @@ J;m=
 ========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 iv8!=
 ```
+
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk")
+
 
 Bandit Level 10 → Level 11
 ======
@@ -298,23 +303,29 @@ Bandit Level 10 → Level 11
 
 Hint;
 - base64 encode
+
+
 ```terminal
 bandit10@bandit:~$ cat data.txt
 VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
 bandit10@bandit:~$ cat data.txt | base64 -d
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ```
+
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR")
+
 
 Bandit Level 11 → Level 12
 ======
-**_ssh bandit10@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+**_ssh bandit11@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
 **A-Za-z N-ZA-Mn-za-m:** ifadesiyle A yerine N gelecek şekilde alfabe ötelenmiştir.
 
 Hint;
 - ROT13 encode
+
 ![ROT13](https://www.wikizeroo.org/index.php?q=aHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8zLzMzL1JPVDEzX3RhYmxlX3dpdGhfZXhhbXBsZS5zdmc)
+
 ```terminal
 bandit11@bandit:~$ cat data.txt
 Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
@@ -322,6 +333,135 @@ bandit11@bandit:~$ cat data.txt | tr A-Za-z N-ZA-Mn-za-m
 The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 ```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu")
+
+Bandit Level 12 → Level 13
+======
+**_ssh bandit12@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+###### You should know
+
+**mkdir** ifadesiyle A yerine N gelecek şekilde alfabe ötelenmiştir.
+
+**cp** ifadesiyle A yerine N gelecek şekilde alfabe ötelenmiştir.
+
+**mv** ifadesiyle A yerine N gelecek şekilde alfabe ötelenmiştir.
+
+**file** ifadesiyle A yerine N gelecek şekilde alfabe ötelenmiştir.
+
+Hint;
+- the file data.txt, which is a hexdump of a file that has been repeatedly compressed
+- mkdir /tmp/myname123
+- copy the datafile using cp
+- rename it using mv
+
+```terminal
+bandit12@bandit:~$ ls -lah
+total 24K
+drwxr-xr-x  2 root     root     4.0K Oct 16  2018 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r-----  1 bandit13 bandit12 2.6K Oct 16  2018 data.txt
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+bandit12@bandit:~$ mkdir /tmp/standart
+bandit12@bandit:~$ cp data.txt /tmp/standart/
+bandit12@bandit:~$ cd /tmp/standart/
+bandit12@bandit:/tmp/standart$ ls -lah
+total 3.9M
+drwxr-sr-x   2 bandit12 root 4.0K Nov  1 13:20 .
+drwxrws-wt 789 root     root 3.9M Nov  1 13:20 ..
+-rw-r-----   1 bandit12 root 2.6K Nov  1 13:20 data.txt
+bandit12@bandit:/tmp/standart$ mv data.txt 01OT
+bandit12@bandit:/tmp/standart$ file 01OT
+01OT: ASCII text
+bandit12@bandit:/tmp/standart$ xxd -rb 01OT > nOT1
+bandit12@bandit:/tmp/standart$ file nOT1
+nOT1: gzip compressed data, was "data2.bin", last modified: Tue Oct 16 12:00:23 2018, max compression, from Unix
+bandit12@bandit:/tmp/standart$ mv nOT1 nOT1.gz
+bandit12@bandit:/tmp/standart$ gzip -d nOT1.gz
+bandit12@bandit:/tmp/standart$ file nOT1
+nOT1: bzip2 compressed data, block size = 900k
+```
+bir süre sonra***...***
+```terminal
+bandit12@bandit:/tmp/standart$ file data4.bin
+data4.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/standart$ tar -xvf data4.bin
+data5.bin
+bandit12@bandit:/tmp/standart$ ls -lah
+total 3.9M
+drwxr-sr-x   2 bandit12 root 4.0K Nov  1 13:51 .
+drwxrws-wt 799 root     root 3.9M Nov  1 13:51 ..
+-rw-r-----   1 bandit12 root 2.6K Nov  1 13:20 01OT
+-rw-r--r--   1 bandit12 root  20K Nov  1 13:43 data4.bin
+-rw-r--r--   1 bandit12 root  10K Oct 16  2018 data5.bin
+bandit12@bandit:/tmp/standart$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/standart$ tar -xvf data5.bin
+data6.bin
+bandit12@bandit:/tmp/standart$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/standart$ bzip -d data6.bin
+-bash: bzip: command not found
+bandit12@bandit:/tmp/standart$ bzip2 -d data6.bin
+bzip2: Can't guess original name for data6.bin -- using data6.bin.out
+bandit12@bandit:/tmp/standart$ file data6.bin.out
+data6.bin.out: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/standart$ tar -xvf data6.bin.out
+data8.bin
+bandit12@bandit:/tmp/standart$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Tue Oct 16 12:00:23 2018, max compression, from Unix
+bandit12@bandit:/tmp/standart$ mv data8.bin data8.gz
+bandit12@bandit:/tmp/standart$ gzip -d data8.gz
+bandit12@bandit:/tmp/standart$ file data8
+data8: ASCII text
+bandit12@bandit:/tmp/standart$ cat data8
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL")
+
+Bandit Level 13 → Level 14
+======
+**_ssh bandit13@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+###### You should know
+
+**telnet:** user interface to the TELNET protocol
+
+**nc:** TCP/IP swiss army knife, a simple unix utility which reads and writes data across network connections
+
+**openssl:** OpenSSL command line tool,  a cryptography toolkit implementing the Secure Sockets Layer (SSL v2/v3)
+
+**s_client:** command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS.
+
+**nmap:** Network Mapper is an open source tool for network exploration and security auditing.
+
+**i:** parametresi identity file
+
+Hint;
+- /etc/bandit_pass/bandit14
+- For this level, you don’t get the next password
+
+```terminal
+bandit13@bandit:~$ ls -lah
+total 24K
+drwxr-xr-x  2 root     root     4.0K Oct 16  2018 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+-rw-r-----  1 bandit14 bandit13 1.7K Oct 16  2018 sshkey.private
+bandit13@bandit:~$ file sshkey.private
+sshkey.private: PEM RSA private key
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e")
+
+
 
 
 
