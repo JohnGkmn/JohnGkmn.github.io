@@ -146,7 +146,39 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh")
 
-
+Bandit Level 5 → Level 6
+======
+**_ssh bandit4@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+istenilenler;
+- human-readable
+- 1033 bytes in size
+- not executable
+**type:** parametresi ile dosya türü; 
+b    block (buffered) special
+c    character (unbuffered) special
+d    directory
+p    named pipe (FIFO)
+f     regular file
+l     symbolic link
+s    socket
+D   door (Solaris)
+**size:** parametdesi ile dosya boyutu;
+    b  for 512-byte blocks (this is the default if no suffix is used)
+    c  for bytes
+    w  for two-byte words
+    k  for Kilobytes (units of 1024 bytes)
+    M  for Megabytes (units of 1048576 bytes)
+    G  for Gigabytes (units of 1073741824 bytes)
+**!:** ifadesi ile sonrasında gelen parametrenin "değili-olmayanı" ifade edilmiştir.
+```terminal
+bandit5@bandit:~$ find -type f -size 1033c ! -executable
+./inhere/maybehere07/.file2
+```
+```terminal
+bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "DXjZPULLxYr17uwoI01bNLQbtFemEgo7")
 
 
 
