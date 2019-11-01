@@ -140,6 +140,10 @@ inhere/-file09: data
 bandit4@bandit:~$ cat inhere/-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ````
-![alt text](https://github.com/JohnGkmn/JohnGkmn.github.io/blob/master/css/smashicons.png "Sol Tik") **koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
+
+![alt text](https://image.flaticon.com/icons/svg/2246/2246610.svg "Sol Tik")
+
+**koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
+
 _____
 Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
