@@ -6,6 +6,10 @@ date: 2019-10-29 01:34:01 +0200
 categories: [writeup]
 ---
 
+**_Her bir komut için açıklamalar MAN ve HELP bölümlerinden alınmıştır._**
+**_Ayrıca yazılan parametreler olabildiğince açıklanmaya çalışılmıştır._**
+**_Bazı bölümler ise writeuplara bakılarak çözülmüştür._**
+
 
 Bandit 0
 ======
@@ -15,12 +19,12 @@ SSH bağlantısı yapılması istenmekte ve bunun için gerekli bilgiler verilme
 ssh bandit0@bandit.labs.overthewire.org -p 2220 
 ````
 
-komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Burayı göz gezdiriniz.**
+komutu ile giriş yapıldığında game için önemli bilgilerin yazılı olduğu bir ekranla karşılaşılmaktadır. **Buraya göz gezdiriniz.**
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png " ")
 
 Bandit Level 0 → Level 1
 ======
-
+###### You should know
 **ls:** List  information  about the FILEs
 
 **cd:** Change the shell working directory
@@ -59,7 +63,7 @@ Bandit Level 2 → Level 3
 ======
 **_ssh bandit2@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
-````terminal
+```terminal
 bandit2@bandit:~$ ls -lah
 total 24K
 drwxr-xr-x  2 root    root    4.0K Oct 16  2018 .
@@ -74,14 +78,14 @@ bandit2@bandit:~$ cat spaces\ in\ this\ filename
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
-````
+```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK") 
 
 Bandit Level 3 → Level 4
 ======
 **_ssh bandit3@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
-````terminal
+```terminal
 bandit3@bandit:~$ ls -lah
 total 24K
 drwxr-xr-x  3 root root 4.0K Oct 16  2018 .
@@ -103,7 +107,7 @@ drwxr-xr-x 3 root    root    4.0K Oct 16  2018 ..
 bandit3@bandit:~/inhere$ cat .hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 bandit3@bandit:~/inhere$
-````
+```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "pIwrPrtPN36QITSp3EQaw936yaFoFgAB")
 
 Bandit Level 4 → Level 5
@@ -149,28 +153,28 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 Bandit Level 5 → Level 6
 ======
 **_ssh bandit5@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
-istenilenler;
+Hint;
 - human-readable
 - 1033 bytes in size
 - not executable
 
 **type:** parametresi ile dosya türü; 
-b    block (buffered) special
-c    character (unbuffered) special
-d    directory
-p    named pipe (FIFO)
-f     regular file
-l     symbolic link
-s    socket
-D   door (Solaris)
+* b    block (buffered) special
+* c    character (unbuffered) special
+* d    directory
+* p    named pipe (FIFO)
+* f     regular file
+* l     symbolic link
+* s    socket
+* D   door (Solaris)
 
 **size:** parametdesi ile dosya boyutu;
-    b  for 512-byte blocks (this is the default if no suffix is used)
-    c  for bytes
-    w  for two-byte words
-    k  for Kilobytes (units of 1024 bytes)
-    M  for Megabytes (units of 1048576 bytes)
-    G  for Gigabytes (units of 1073741824 bytes)
++ b  for 512-byte blocks (this is the default if no suffix is used)
++ c  for bytes
++ w  for two-byte words
++ k  for Kilobytes (units of 1024 bytes)
++ M  for Megabytes (units of 1048576 bytes)
++ G  for Gigabytes (units of 1073741824 bytes)
 
 **!:** ifadesi ile sonrasında gelen parametrenin "değili-olmayanı" ifade edilmiştir.
 ```terminal
@@ -186,7 +190,7 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 Bandit Level 6 → Level 7
 ======
 **_ssh bandit6@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
-istenilenler;
+Hint;
 - owned by user bandit7
 - owned by group bandit6
 - 33 bytes in size
@@ -204,6 +208,58 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs")
 
+Bandit Level 7 → Level 8
+======
+**_ssh bandit7@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+##### You should know
+**grep:** Search for PATTERN in each FILE or standard input.
+
+**sort:** Write sorted concatenation of all FILE(s) to standard output.
+
+**uniq:** Filter adjacent matching lines from INPUT (or standard input), writing to OUTPUT (or standard output).
+
+**strings:**  Display printable strings in [file(s)]
+
+**base64:** Base64 encode or decode FILE
+
+**tr:** Translate, squeeze, and/or delete characters from standard input,writing to standard output.
+
+**tar:**  saves many files together into a single tape or disk archive, and can restore individual files from the archive
+
+**gzip:** Compress or uncompress FILEs
+
+**bzip2:** bzip2, a block-sorting file compressor.
+
+**xxd:** make a hexdump or do the reverse.
+
+Hint;
+- dosya adı: data.txt
+- word: millionth
+
+```terminal
+bandit7@bandit:~$ ls -lah
+total 4.1M
+drwxr-xr-x  2 root    root    4.0K Oct 16  2018 .
+drwxr-xr-x 41 root    root    4.0K Oct 16  2018 ..
+-rw-r--r--  1 root    root     220 May 15  2017 .bash_logout
+-rw-r--r--  1 root    root    3.5K May 15  2017 .bashrc
+-rw-r-----  1 bandit8 bandit7 4.0M Oct 16  2018 data.txt
+-rw-r--r--  1 root    root     675 May 15  2017 .profile
+bandit7@bandit:~$ cat data.txt | grep millionth
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "cvX2JJa4CFALtqS87jk27qwqGhBM9plV")
+
+Bandit Level 8 → Level 9
+======
+**_ssh bandit8@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+**u** parametresi ile sadece eşsiz olan linelar
+**|** ifadesi ile ilk komutun çıktısı sonraki komutun girdisi olarak verilmiştir.
+```terminal
+bandit8@bandit:~$ sort data.txt | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR")
 
 
 ![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
