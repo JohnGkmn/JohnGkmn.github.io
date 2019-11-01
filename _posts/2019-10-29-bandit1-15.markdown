@@ -72,8 +72,8 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 bandit2@bandit:~$ cat "spaces in this filename"
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ````
-![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "Sol Tik")
-
+![alt text](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "koReBOKuIDDepwhWk7jZC0RTdopnAYKh") 
+**koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
 
 Bandit Level 3 → Level 4
 ======
@@ -142,9 +142,9 @@ bandit4@bandit:~$ cat inhere/-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ````
 
-![alt text](https://image.flaticon.com/icons/svg/2246/2246610.svg "Sol Tik")
 
-**koReBOKuIDDepwhWk7jZC0RTdopnAYKh**
+
+![alt text](https://image.flaticon.com/icons/svg/2246/2246610.svg "Sol Tik")
 
 _____
 Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
