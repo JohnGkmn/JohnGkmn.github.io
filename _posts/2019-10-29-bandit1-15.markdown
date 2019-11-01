@@ -148,11 +148,12 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 Bandit Level 5 → Level 6
 ======
-**_ssh bandit4@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+**_ssh bandit5@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 istenilenler;
 - human-readable
 - 1033 bytes in size
 - not executable
+
 **type:** parametresi ile dosya türü; 
 b    block (buffered) special
 c    character (unbuffered) special
@@ -179,6 +180,24 @@ bandit5@bandit:~$ cat ./inhere/maybehere07/.file2
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "DXjZPULLxYr17uwoI01bNLQbtFemEgo7")
+
+Bandit Level 6 → Level 7
+======
+**_ssh bandit6@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+istenilenler;
+- owned by user bandit7
+- owned by group bandit6
+- 33 bytes in size
+**user:** parametresi ile user
+**group:** parametresi ile group
+**2>/dev/null:** istenmeyen sonuçların gözükmemesi durumları ifade edilmiştir.
+```terminal
+bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs")
 
 
 
