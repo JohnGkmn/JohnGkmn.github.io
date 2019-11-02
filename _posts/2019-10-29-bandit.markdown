@@ -260,9 +260,9 @@ Bandit Level 8 → Level 9
 ======
 **_ssh bandit8@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
-**u** parametresi ile sadece eşsiz olan linelar
+**u:** parametresi ile sadece eşsiz olan linelar
 
-**|** ifadesi ile ilk komutun çıktısı sonraki komutun girdisi olarak verilmiştir.
+**|:** ifadesi ile ilk komutun çıktısı sonraki komutun girdisi olarak verilmiştir.
 ```terminal
 bandit8@bandit:~$ sort data.txt | uniq -u
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
@@ -542,6 +542,7 @@ localhost [127.0.0.1] 31002 (?) : Connection refused
 
 Bu kod çalıştırıldığında her port için bağlanmayı deneyecektir. 31518 porta geldiğinde bağlantı denemesi refused olmadığından bekleyecektir. "Ctrl + C" ile devam edilir. Aynı durum 31790'da da gerçekleşecektir. Bu portlar için;
 
+
 ```terminal
 bandit16@bandit:~$ openssl s_client -connect localhost:31790
 ---
@@ -580,7 +581,116 @@ closed
 
 denendiğinde istenilen sonuç alınacaktır. Burada openssl bağlantısının çıktısı filtrelenmiş sadece gerekli kısım alınmıştır. Sonraki level için RSA key kullanılacaktır.
 
-![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "cluFn7wTiGryunymYOu4RcffSxQluehd")
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "ssh key")
+
+Bandit Level 17 → Level 18
+======
+**Bağlantı için;** bir önceki seviyede verilen private key kullanılmalıdır. Bandit16 dan Bandit17 e geçilmelidir. Geçiş aşaması;
+
+```terminal
+bandit16@bandit:/tmp$ mkdir forBandit17
+bandit16@bandit:/tmp$ cd forBandit17
+bandit16@bandit:/tmp/forBandit17$ ls  -lah
+total 3.9M
+drwxr-sr-x    2 bandit16 root 4.0K Nov  2 09:30 .
+drwxrws-wt 1128 root     root 3.9M Nov  2 09:31
+bandit16@bandit:/tmp/forBandit17$ touch sshkey.private
+bandit16@bandit:/tmp/forBandit17$ vi sshkey.private
+bandit16@bandit:/tmp/forBandit17$ bandit16@bandit:/tmp/forBandit17$ ls -lah
+total 3.9M
+drwxr-sr-x    2 bandit16 root 4.0K Nov  2 10:06 .
+drwxrws-wt 1134 root     root 3.9M Nov  2 10:06 ..
+-rw-r--r--    1 bandit16 root 1.7K Nov  2 10:06 sshkey.private
+bandit16@bandit:/tmp/forBandit17$ cat sshkey.private
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+```
+
+```terminal
+bandit16@bandit:/tmp/forBandit17$ chmod 600 sshkey.private
+bandit16@bandit:/tmp/forBandit17$ ssh -i sshkey.private  bandit17@localhost
+bandit17@bandit:~$
+```
+
+şeklindedir. Sonraki çalışmalar Bandit18 içindir.
+
+###### You should know
+
+**diff:** Compare FILES line by line.
+
+Hint;
+- Byebye !
+
+```terminal
+bandit17@bandit:~$ ls -lah
+total 36K
+drwxr-xr-x  3 root     root     4.0K Oct 20 16:45 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rw-r-----  1 bandit17 bandit17   33 Oct 20 16:45 .bandit16.password
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r-----  1 bandit18 bandit17 3.3K Oct 16  2018 passwords.new
+-rw-r-----  1 bandit18 bandit17 3.3K Oct 16  2018 passwords.old
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+drwxr-xr-x  2 root     root     4.0K Oct 20 16:45 .ssh
+bandit17@bandit:~$ diff passwords.old passwords.new
+42c42
+< hlbSBPAWJmL6WFDb06gpTx1pPButblOA
+---
+> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd")
+
+Bandit Level 18 → Level 19
+======
+**_ssh bandit18@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu. Eğer bir önceki seviyede verilen hint görülüyorsa doğru password kullanılıyor demektir.
+
+Hint;
+-  stored in a file readme in the homedirectory
+
+```terminal
+>  ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit18@bandit.labs.overthewire.org's password:
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x")
+
+
+
+
+
+
+
+
 
 
 
