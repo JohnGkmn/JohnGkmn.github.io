@@ -8,7 +8,7 @@ categories: [writeup]
 
 ###### Her bir komut için açıklamalar MAN ve HELP bölümlerinden alınmıştır.
 
-###### Ayrıca yazılan parametreler olabildiğince açıklanmaya çalışılmıştır.
+###### Ayrıca, yazılan parametreler olabildiğince açıklanmaya çalışılmıştır.
 
 ###### Bazı bölümler ise writeuplara bakılarak çözülmüştür.
 
@@ -459,7 +459,9 @@ bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 ```
 
+
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e")
+
 
 Bandit Level 14 → Level 15
 ======
@@ -471,7 +473,8 @@ bandit14@bandit:nc localhost 30000
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 ```
-```telnet
+
+```terminal
 bandit14@bandit:~$ telnet localhost 30000
 Trying 127.0.0.1...
 Connected to localhost.
@@ -511,11 +514,12 @@ Hangi port olduğunu bulmak için iki farklı yol denenmiştir. İlki nmap ile b
 
 Aralardaki çıktılar silinmiştir, sadece dikkat edilen yerler bırakılmıştır.
 
-**p** parametresi ile port aralığı belirtilmiştir.
-**localhost** ifadesi ile taramanın nereye yapılacağı bildirilmiştir.
+**p:** parametresi ile port aralığı belirtilmiştir.
+
+**localhost:** ifadesi ile taramanın nereye yapılacağı bildirilmiştir.
 
 ```terminal
- nmap localhost -A -T 5 -p 31000-32000 --vv
+bandit16@bandit:~$ nmap localhost -A -T 5 -p 31000-32000 --vv
  PORT      STATE    SERVICE     REASON      VERSION
 31518/tcp filtered unknown     no-response
 31790/tcp open     ssl/unknown syn-ack
@@ -539,7 +543,7 @@ localhost [127.0.0.1] 31002 (?) : Connection refused
 Bu kod çalıştırıldığında her port için bağlanmayı deneyecektir. 31518 porta geldiğinde bağlantı denemesi refused olmadığından bekleyecektir. "Ctrl + C" ile devam edilir. Aynı durum 31790'da da gerçekleşecektir. Bu portlar için;
 
 ```terminal
-openssl s_client -connect localhost:31790
+bandit16@bandit:~$ openssl s_client -connect localhost:31790
 ---
 cluFn7wTiGryunymYOu4RcffSxQluehd
 Correct!
