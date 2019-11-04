@@ -890,7 +890,7 @@ bandit23@bandit:/tmp/yesil01$ cp yesil.sh /var/spool/bandit24/
 
 1-2 iki dakika bekleyiniz.
 
-```termimal
+```
 bandit23@bandit:/tmp/yesil01$ ls -lah
 total 3.9M
 drwxrwxrwx    2 bandit23 root     4.0K Nov  4 09:32 .
@@ -1063,7 +1063,6 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
 ```
-
 
 ```terminal
 bandit27@bandit:/tmp/yesil01$ ls -lah
