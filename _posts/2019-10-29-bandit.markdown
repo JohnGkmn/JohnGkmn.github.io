@@ -762,7 +762,7 @@ Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 Password matches, sending next password
 ```
 
-![Nasıl mı?]https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/lvl20bandit.jpg
+![Nasıl mı?](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/lvl20bandit.jpg)
 
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr")
 
