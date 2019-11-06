@@ -22,11 +22,8 @@ Natas 0
 
 Hint;
 - All passwords are also stored in /etc/natas_webpass/
-
 + Username: natas0
-
 + Password: natas0
-
 + URL:      http://natas0.natas.labs.overthewire.org
 
 Verilen bilgiler kullanılarak başlandığında yönlendirilen sayfa içerisinde password, page sourceda yer almaktadır.
@@ -46,13 +43,11 @@ Natas Level 0 → Level 1
 ======
 
 + Username: natas1
-
 + URL:      http://natas1.natas.labs.overthewire.org
 
 Giriş için password bir önceki levelda bulunmuştu.
 
 Hint;
-
 - You can find the password for the next level on this page, but rightclicking has been blocked! 
 
 Bazen rightclick blocked olsada klavye kısayolları kullanılabilmektedir. **CTRL + U** ile page sourcea bakılabilir. Ayrıca kullanılan browserın menüsünden de yardım alınabilir.
