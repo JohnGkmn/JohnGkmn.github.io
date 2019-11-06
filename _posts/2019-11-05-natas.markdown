@@ -45,8 +45,6 @@ Natas Level 0 → Level 1
 + Username: natas1
 + URL:      http://natas1.natas.labs.overthewire.org
 
-Giriş için password bir önceki levelda bulunmuştu.
-
 Hint;
 - You can find the password for the next level on this page, but rightclicking has been blocked! 
 
@@ -163,7 +161,6 @@ Natas Level 4 → Level 5
 ======
 
 + Username: natas5
-
 + URL:      http://natas5.natas.labs.overthewire.org
 
 Burp içeriğinde,
