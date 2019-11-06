@@ -422,7 +422,7 @@ source code içerisinde xor_encrypt fonksyionu ve "$tempdata = json_decode(xor_e
 
 Cookie değeri (url dencode): ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw=
 
-http://www.writephponline.com/ sitesi kullanılarak aşağıdaki kodlar ile
+<http://www.writephponline.com/> sitesi kullanılarak aşağıdaki kodlar ile
 
 ```terminal
 function xor_encrypt($in) 
@@ -444,7 +444,7 @@ echo (xor_encrypt(base64_decode("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4
 qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq
 ``` 
 
-elde edilmiştir. Burada **key** variableına "qw8J" değerini verip tekrar çalıştırdığında json formatındaki datanın encode halinin return edildiği görülmektedir.
+elde edilmiştir. Burada **key** variableına "qw8J" değerini verip tekrar çalıştırıldığında json formatındaki datanın encode halinin return edildiği görülmektedir.
 
 ```terminal
  function xor_encrypt1() {  
@@ -471,7 +471,6 @@ Cookies are protected with XOR encryption<br/><br/>
 
 The password for natas12 is EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3<br>
 ```
-
 
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3")
 
