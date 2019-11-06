@@ -565,7 +565,7 @@ Hint;
 
 ![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas15.jpg "ss")
 
-Python ile yazılan(ALINTIDIR) aşağıdaki script password elde edilebilmektedir.
+Python ile yazılan(ALINTIDIR) aşağıdaki script ile password elde edilebilmektedir.
 
 ```terminal
 import requests
