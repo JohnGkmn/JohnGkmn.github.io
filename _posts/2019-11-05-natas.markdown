@@ -493,7 +493,7 @@ passthru('cat /etc/natas_webpass/natas13');
 
 Bir dosyaya yukarıdaki komutaları kaydedip servera upload edilmiştir. Bu sırada Burp ile gönderilen dosyaya rastgele isim atandığında jpg uzantısı yerine php yazılarak gönderilmiştir. Serverın verdiği urle gidilerek password elde edilmiştir.
 
-![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas12.jpg "ss"
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas12.jpg "ss")
 
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY")
 
@@ -507,15 +507,15 @@ Natas Level 12 → Level 13
 Hint;
 - Sourcecode
 
-Sourcecode'a bir önceki seviyeden farklı olarak exif_imagetype fonksiyonu eklenmiş. Sadece dosya uzantısını değiştirmek işe yaramamaktadır. https://hexed.it/ sitesinden faydalanarak bir jpg dosyasının ilk bitleri olan **FFD8FFE0** ifadesini php dosyasına eklenerek exif_imagetype fonksiyonu bypass edilebilmektedir. 
+Sourcecode'a bir önceki seviyeden farklı olarak exif_imagetype fonksiyonu eklenmiş. Sadece dosya uzantısını değiştirmek işe yaramamaktadır. <https://hexed.it/> sitesinden faydalanarak bir jpg dosyasının ilk bitleri olan **FFD8FFE0** ifadesini php dosyasına eklenerek exif_imagetype fonksiyonu bypass edilebilmektedir. 
 
 Sonraki adımları bir önceki levelda olduğu gibi ilerletilerek password elde edilmiştir. 
 
 natas14.php dosyasını [link](https://github.com/JohnGkmn/JohnGkmn.github.io/blob/master/css/natas/natas14.php) üzerinden inceleyebilirsiniz.
 
-![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas14.jpg "ss"
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas14.jpg "ss")
 
-![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas14pw.jpg "ss"
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas14pw.jpg "ss")
 
 ![password](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1")
 
@@ -561,9 +561,9 @@ Hint;
 - `username` varchar(64) DEFAULT NULL,
 - `password` varchar(64) DEFAULT NULL); 
 
-https://www.w3schools.com/sql/sql_datatypes.asp adresinden _varchar(64)_ variable tipi için bilgi edinilebilir.
+<https://www.w3schools.com/sql/sql_datatypes.asp> adresinden _varchar(64)_ variable tipi için bilgi edinilebilir.
 
-![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas15.jpg "ss"
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas15.jpg "ss")
 
 Python ile yazılan(ALINTIDIR) aşağıdaki script password elde edilebilmektedir.
 
