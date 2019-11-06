@@ -173,7 +173,7 @@ DNT: 1
 Cache-Control: max-age=0
 ```
 
-_loggedin__ kısmını 1 yaparak password elde edilmiştir.
+_loggedin_ kısmını 1 yaparak password elde edilmiştir.
 
 ```terminal
 Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
@@ -215,7 +215,7 @@ $secret = "FOEIUWGHFEEUHOFUOIU";
 ?>
 ``` 
 
-![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas6.jpg "ss"
+![Page SS](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas6.jpg "ss")
 
 
 ```terminal
