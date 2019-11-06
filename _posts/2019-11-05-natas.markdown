@@ -135,7 +135,6 @@ Natas Level 3 → Level 4
 ======
 
 + Username: natas4
-
 + URL:      http://natas4.natas.labs.overthewire.org
 
 Hint;
