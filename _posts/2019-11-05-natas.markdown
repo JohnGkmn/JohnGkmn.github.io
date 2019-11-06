@@ -81,6 +81,7 @@ There is nothing on this page
 
 source olarak verilen path dikkat çekmektedir.
 
+![ss](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/natas/natas2.jpg "ss")
 
 ```terminal
 # username:password
