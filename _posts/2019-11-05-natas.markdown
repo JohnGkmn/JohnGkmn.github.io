@@ -282,7 +282,7 @@ if(array_key_exists("submit", $_POST)) {
 ?>
 ```
 
-Yukarıdaki kodda function incelendiğinde value bir dizi encryption işlemine tabi tutulmuş ve if bloğunda input ile kıyaslanmaktadır. EncodedSecret değerini decode için https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_string_hex2bin sitesi decoder olarak kullanılmıştır. Elde edilen değer https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_string_strrev yardımıyla reverse edilmiş ve Burp decoder ile base64 decode edilmiştir. Sonrasında elde edilen output natas8 de input olarak kullanılarak password elde edilmiştir.
+Yukarıdaki kodda function incelendiğinde value bir dizi encryption işlemine tabi tutulmuş ve if bloğunda input ile kıyaslanmaktadır. EncodedSecret değerini decode için <https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_string_hex2bin> sitesi decoder olarak kullanılmıştır. Elde edilen değer <https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_string_strrev> yardımıyla reverse edilmiş ve Burp decoder ile base64 decode edilmiştir. Sonrasında elde edilen output natas8 de input olarak kullanılarak password elde edilmiştir.
 
 ```terminal
 Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl 
