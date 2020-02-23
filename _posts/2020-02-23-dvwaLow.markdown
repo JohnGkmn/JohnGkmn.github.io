@@ -167,4 +167,12 @@ https://pastebin.com/raw/h1gR7h3W
 
 ![-](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "*")
 
-<script>onerror=alert;throw 1994</script>
+![Comingsoon](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/comingsoon.jpg "CS")
+
+
+![ToDoList](https://image.flaticon.com/icons/svg/2246/2246610.svg "Task")
+
+_____
+
+Want to suggest something? Please [Send me a request](https://github.com/JohnGkmn/JohnGkmn.github.io/issues/new).
+![writeup](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/map-location.png "walktrough")
