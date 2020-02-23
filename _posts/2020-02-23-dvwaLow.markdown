@@ -166,3 +166,5 @@ https://pastebin.com/raw/h1gR7h3W
 ![Low CSP](https://raw.githubusercontent.com/JohnGkmn/CyberSecurity/master/WriteUp/dvwa/dvwaLow/L_csp1.png " CSP")
 
 ![-](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "*")
+
+<script>onerror=alert;throw 1994</script>
