@@ -141,7 +141,7 @@ XSS Reflected
 ======
 
 Reflected XSS saldırısı bir web uygulamasının veri giriş noktalarında eğer denetleme/filtreleme/bloklama mekanizmaları yoksa ve saldırganın bu veri giriş noktasına girdiği script kodları (örn; javascript, visual basic script) sayfaya çıktı olarak "yansıtılıyorsa" saldırganların bu yolla kendi değerlerini sayfaya yansıttırması işlemine denir.
-script>onerror=alert;throw 1</script>
+<script>onerror=alert;throw 1</script>
 
 ![Low XSS Reflected 1](https://raw.githubusercontent.com/JohnGkmn/CyberSecurity/master/WriteUp/dvwa/dvwaLow/l_xssreflected1.png " XSS Reflected 1")
 
