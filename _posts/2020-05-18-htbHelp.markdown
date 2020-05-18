@@ -4,6 +4,7 @@ title:  "HTB Help"
 subtitle: "HTB Help Walkthrough"
 date: 2020-05-23 2:34:46 +0200
 categories: [writeup]
+categories: [htb]
 ---
 
 ###### Bazı bölümler writeuplara bakılarak çözülmüştür.
