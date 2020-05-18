@@ -12,3 +12,9 @@
  
 - slug: writeup
   name: Writeup
+  
+- slug: htb
+  name: HTB
+  
+- slug: vulnhub
+  name: Vulnhub
