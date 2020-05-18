@@ -130,7 +130,8 @@ Burp Sequencer uygulama tarafından üretilen kritik tokenların rastgelelik der
 XSS Dom
 ======
 
-URL de görüldüğü gibi <script>onerror=alert;throw 1</script> payloadı ile zafiyeti görmüş olduk.
+URL de görüldüğü gibi <scrip.t>onerror=
+  ;throw 1</scri.pt> payloadı ile zafiyeti görmüş olduk.
 
 ![Low XSS Dom 1](https://raw.githubusercontent.com/JohnGkmn/CyberSecurity/master/WriteUp/dvwa/dvwaLow/l_xssdom1.png " XSS DOM 1")
 
@@ -141,8 +142,7 @@ XSS Reflected
 ======
 
 Reflected XSS saldırısı bir web uygulamasının veri giriş noktalarında eğer denetleme/filtreleme/bloklama mekanizmaları yoksa ve saldırganın bu veri giriş noktasına girdiği script kodları (örn; javascript, visual basic script) sayfaya çıktı olarak "yansıtılıyorsa" saldırganların bu yolla kendi değerlerini sayfaya yansıttırması işlemine denir.
-script>onerror=alert;throw 1</script>
-
+  
 ![Low XSS Reflected 1](https://raw.githubusercontent.com/JohnGkmn/CyberSecurity/master/WriteUp/dvwa/dvwaLow/l_xssreflected1.png " XSS Reflected 1")
 
 ![-](https://raw.githubusercontent.com/JohnGkmn/JohnGkmn.github.io/master/css/smashicons.png "*")
