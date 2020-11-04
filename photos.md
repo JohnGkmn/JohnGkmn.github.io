@@ -7,7 +7,6 @@ permalink: /photos/
 
 Bazen kelimeler yerine fotoğraf. 
 
-
-[Gökmen DEMİR](https://johnGkmn.github.io)
-
 Devamı gelecek...
+___
+[Gökmen DEMİR](https://johnGkmn.github.io)
