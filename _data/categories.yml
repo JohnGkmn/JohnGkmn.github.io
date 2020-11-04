@@ -16,14 +16,5 @@
 - slug: productivity
   name: Productivity
 
-- slug: photos
-  name: Photos
-
-- slug: turkishmovies
-  name: Turkish Movies
-  
-- slug: foreignmovies
-  name: Foreign Movies
-
 - slug: test
   name: Test
