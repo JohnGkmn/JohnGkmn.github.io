@@ -5,13 +5,6 @@ subtitle: Çözüme giden yollar
 permalink: /writeups/
 ---
 
-ilk page denemesi..
-[Gökmen DEMİR](JohnGkmn.github.io)
-
-Devamı gelecek...
-
-_____
-
 <ul class="list-posts">
     {% for post in site.posts %}
         <li class="post-teaser">
@@ -24,3 +17,5 @@ _____
 </ul> 
 
 Devamı gelecek...
+_____
+[Gökmen DEMİR](https://johnGkmn.github.io)
