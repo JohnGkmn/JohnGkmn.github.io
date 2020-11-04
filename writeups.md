@@ -17,5 +17,6 @@ permalink: /writeups/
 </ul> 
 
 Devamı gelecek...
+
 ___
 [Gökmen DEMİR](https://johnGkmn.github.io)
