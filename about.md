@@ -6,4 +6,13 @@ permalink: /about/
 ---
 
 Bir takım kelimeler, kelimeler ve daha çok kelimeler. 
+
+___
 [Gökmen DEMİR](https://johnGkmn.github.io)
+
+
+#
+
+[Gökmen DEMİR](https://johnGkmn.github.io)
+
+___
