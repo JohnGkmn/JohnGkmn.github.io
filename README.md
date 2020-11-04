@@ -14,6 +14,11 @@ ___
 [Gökmen DEMİR](https://johnGkmn.github.io)
 
 ```
+2. Adım;
+```html
+_includes>header.html içerisine
+<li class="menu__entry"><a href="{{ '/review' | prepend: site.baseurl }}">Review</a></li>
+```
 ___
 ## Kategori Eklemek
 ```yml
