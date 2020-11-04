@@ -22,7 +22,8 @@ _data>categories.yml içerisine
   name: Photos
 ```
 2. Adım;
----html
+```html
+---
 categories içerisine photos.html oluşturup 
 layout: category
 category: photos
