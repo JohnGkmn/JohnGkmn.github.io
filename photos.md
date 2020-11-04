@@ -5,6 +5,9 @@ subtitle: For Reminiscences
 permalink: /photos/
 ---
 
-Bazen kelimeler yerine fotoğraf. [Gökmen DEMİR](JohnGkmn.github.io)
+Bazen kelimeler yerine fotoğraf. 
+
+
+[Gökmen DEMİR](https://johnGkmn.github.io)
 
 Devamı gelecek...
