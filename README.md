@@ -21,7 +21,7 @@ _data>categories.yml içerisine
 - slug: photos
   name: Photos
 ```
-2. Adım;
+2. Adım; kategori adıyla html dosyası oluşturulmalı
 ```html
 ---
 categories içerisine photos.html oluşturup 
