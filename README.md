@@ -9,8 +9,10 @@ permalink: /photos/
 ---
 
 Devamı gelecek...
+
 ___
 [Gökmen DEMİR](https://johnGkmn.github.io)
+
 ```
 ___
 ## Kategori Eklemek
