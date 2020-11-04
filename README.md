@@ -13,6 +13,13 @@ ___
 [Gökmen DEMİR](https://johnGkmn.github.io)
 ```
 ___
+## Kategori Eklemek
+```yml
+_data>categories.yml içerisine
+- slug: photos
+  name: Photos
+```
+___
 # Daktilo
 Daktilo is a [Jekyll](jekyllrb.com) theme with a minimal design inspired from typewriters.
 
