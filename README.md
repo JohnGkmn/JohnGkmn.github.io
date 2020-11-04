@@ -21,6 +21,14 @@ _data>categories.yml içerisine
 - slug: photos
   name: Photos
 ```
+2. Adım;
+---html
+categories içerisine photos.html oluşturup 
+layout: category
+category: photos
+permalink: /categories/photos/
+---
+```
 ___
 # Daktilo
 Daktilo is a [Jekyll](jekyllrb.com) theme with a minimal design inspired from typewriters.
