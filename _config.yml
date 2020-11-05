@@ -1,14 +1,15 @@
 # Site settings
 title: Daktilo
 description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Gökmen DEMiR - Kişisel Alan. Bu blog yalnızca fikirlerimi paylaştığım ve
+  kendime notlar bıraktığım bir alandır. 
+  Eleştirilere açığım.
+  Yüzleşmekten kaçanlar daha çok gelsin.
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://hitchhiker.ma" # the base hostname & protocol for your site
+baseurl: "/blog/" # the subpath of your site, e.g. /blog/
+url: "https://johngkmn.github.io" # the base hostname & protocol for your site
 
-# google_analytics: 'UA-XXXXXXXX-X'
+# google_analytics: 'G-LYSXPE1LM7'
 
 # Syntax highlighting
 highlightstyle: ''
