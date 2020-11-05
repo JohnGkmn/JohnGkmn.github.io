@@ -9,7 +9,12 @@ description: >
 baseurl: "/blog/" # the subpath of your site, e.g. /blog/
 url: "https://johngkmn.github.io" # the base hostname & protocol for your site
 
-# google_analytics: 'G-LYSXPE1LM7'
+author:
+  fullname: Gökmen DEMİR
+  github: JohnGkmn
+  twitter: standartyerli
+
+google_analytics: 'G-LYSXPE1LM7'
 
 # Syntax highlighting
 highlightstyle: ''
