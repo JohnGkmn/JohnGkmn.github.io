@@ -7,6 +7,21 @@
 - slug: vulnhub
   name: Vulnhub
 
+- slug: tryhackme
+  name: TryHackMe
+  
+- slug: dvwa
+  name: DVWA
+  
+- slug: bWAPP
+  name: bWAPP
+  
+- slug: overthewirenatas
+  name: OverTheWire:Natas
+  
+- slug: webforpentester
+  name: WebForPentester
+  
 - slug: design
   name: Design
 
